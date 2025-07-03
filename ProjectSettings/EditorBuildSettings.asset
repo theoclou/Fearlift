@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FearOfHeights.unity
     guid: 3dd6985d248a2724291b46a30456112a
+  - enabled: 1
+    path: Assets/Scenes/Skyscraper.unity
+    guid: afe773cad45917440993d848bbb3c6ef
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 20d9c9b751937f94dbb417b879db45b5, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
