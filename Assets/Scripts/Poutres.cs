@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class AutoSwing : MonoBehaviour
 {
-    public float swingSpeed = 1f;
-    public float swingAmount = 10f;
+    public float swingSpeed = 0.1f;
+    public float swingAmount = 0.5f;
 
     private Quaternion startRotation;
 
