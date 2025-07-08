@@ -3,8 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class AltitudeVolumeControl : MonoBehaviour
 {
-    public float maxAltitude = 5f; // Y haut = volume minimum
-    public float minAltitude = -10f; // Y bas = volume max
+    public float maxAltitude = 5f;   // Y haut = volume minimum
+    public float minAltitude = -10f; // Y bas = volume maximum
     public float maxVolume = 1f;
     public float minVolume = 0f;
 
@@ -19,9 +19,8 @@ public class AltitudeVolumeControl : MonoBehaviour
     {
         float y = transform.position.y;
 
-        // Interpolation inverse selon altitude
-        float t = Mathf.InverseLerp(maxAltitude, minAltitude, y);
-        float volume = Mathf.Lerp(minVolume, maxVolume, t);
+        float t = Mathf.InverseLerp(minAltitude, maxAltitude, y);
+        float volume = Mathf.Lerp(maxVolume, minVolume, t);
 
         audioSource.volume = volume;
     }
