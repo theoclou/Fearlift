@@ -13,6 +13,7 @@ public class DataManager : MonoBehaviour
     [SerializeField]
     GameObject _mainCamera;
     [SerializeField] bool _isTestMode = false;
+    [SerializeField] GazeRaycast gazeRaycast;
     private bool flagBrower = true;
     private bool delayFlag = true;
     private float ProcessingTime = 0;
@@ -46,6 +47,7 @@ public class DataManager : MonoBehaviour
         }
         _log.HMDpos = _mainCamera.transform.position;
         _log.HMDrot = _mainCamera.transform.rotation;
+        _log.looksAtVoid = gazeRaycast != null && gazeRaycast.LooksAtVoid;
         DatabaseManager.instance.UpdateDataLog(_log);
     }
 

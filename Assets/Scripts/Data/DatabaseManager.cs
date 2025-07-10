@@ -20,6 +20,7 @@ public struct DataStruct
     public float leftOpenness;
     public float rightOpenness;
     public bool myflag;
+    public bool looksAtVoid; 
 }
 public class DatabaseManager : MonoBehaviour
 {
