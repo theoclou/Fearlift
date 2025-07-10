@@ -23,6 +23,9 @@ public struct DataStruct
 }
 public class DatabaseManager : MonoBehaviour
 {
+
+    private string _folderPath = "ExportedData/";   
+
     [SerializeField]
     private bool _isTaskStart = false;
     public bool isTaskStart
@@ -129,6 +132,11 @@ public class DatabaseManager : MonoBehaviour
     void ExportData()
     {
         string fileName = $"exportData_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
+        if (!Directory.Exists(_folderPath))
+        {
+            Directory.CreateDirectory(_folderPath);
+        }
+        fileName = Path.Combine(_folderPath, fileName);
         _exFile = new StreamWriter(fileName);
         {
         };
