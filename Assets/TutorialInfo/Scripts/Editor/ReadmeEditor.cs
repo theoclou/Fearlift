@@ -5,11 +5,46 @@ using UnityEditor;
 using System;
 using System.IO;
 using System.Reflection;
+using System.Linq;
+
+namespace ReadmeSystem.Editor
+{
+
 
 [CustomEditor(typeof(Readme))]
 [InitializeOnLoad]
-public class ReadmeEditor : Editor {
+    public class ReadmeEditor : UnityEditor.Editor
+    {
 	
+        Readme readme { get { return (Readme)target; } }
+        string nextReadmeTitle
+        {
+            get
+            {
+                if (readme.nextReadme == null)
+                    return "Next";
+
+
+                return readme.nextReadme.title == "" ? "Next" : readme.nextReadme.title;
+            }
+        }
+
+        string prevReadmeTitle
+        {
+            get
+            {
+                if (readme.prevReadme == null)
+                    return "Prev";
+
+
+                return readme.prevReadme.title == "" ? "Prev" : readme.prevReadme.title;
+            }
+        }
+
+
+
+        static bool showInEditMode = false;
+
 	static string kShowedReadmeSessionStateName = "ReadmeEditor.showedReadme";
 	
 	static float kSpace = 16f;
@@ -21,124 +56,238 @@ public class ReadmeEditor : Editor {
 	
 	static void SelectReadmeAutomatically()
 	{
-		if (!SessionState.GetBool(kShowedReadmeSessionStateName, false ))
+            if (!SessionState.GetBool(kShowedReadmeSessionStateName, false))
 		{
 			var readme = SelectReadme();
+                if (readme)
+                {
 			SessionState.SetBool(kShowedReadmeSessionStateName, true);
+                }
+            }
+        }
 			
-			if (readme && !readme.loadedLayout)
+
+        [MenuItem("Tutorial/Show Tutorial Instructions")]
+        static Readme SelectReadme()
 			{
-				LoadLayout();
-				readme.loadedLayout = true;
+            showInEditMode = false;
+
+            Readme result = GetReadmeRoot();
+
+
+            if (result != null)
+            {
+                Selection.objects = new UnityEngine.Object[] { result };
+
 			}
+            else
+            {
+                Debug.LogWarning("Couldn't find a readme");
 		} 
+
+            return result;
+
 	}
 	
-	static void LoadLayout()
+
+        protected override void OnHeaderGUI()
 	{
-		var assembly = typeof(EditorApplication).Assembly; 
-		var windowLayoutType = assembly.GetType("UnityEditor.WindowLayout", true);
-		var method = windowLayoutType.GetMethod("LoadWindowLayout", BindingFlags.Public | BindingFlags.Static);
-		method.Invoke(null, new object[]{Path.Combine(Application.dataPath, "IgniteCoders/Simple Water Shader/Info/Layout.wlt"), false});
+            var readme = (Readme)target;
+
+            if (showInEditMode)
+            {
+                base.OnHeaderGUI();
+                return;
+            }
+
+            DrawHeaderGUI(readme);
 	}
 	
-	[MenuItem("Documentation/Simple Water Shader")]
-	static Readme SelectReadme() 
+        public override void OnInspectorGUI()
+        {
+            var readme = (Readme)target;
+
+            if (showInEditMode)
+            {
+                base.OnInspectorGUI();
+
+                EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+                showInEditMode = EditorGUILayout.Toggle("Show in Edit Mode", showInEditMode);
+
+                EditorGUI.BeginChangeCheck();
+                readme.isRoot = EditorGUILayout.Toggle("Set as Root", readme.isRoot);
+                if (EditorGUI.EndChangeCheck())
+                {
+                    if (readme.isRoot)
 	{
-		var ids = AssetDatabase.FindAssets("Readme t:Readme");
-		if (ids.Length == 1)
+                        Debug.Log("ResetAll");
+                        //Ensures that there is only one readme as root.
+                        ResetAllRootReadme();
+                        readme.isRoot = true;
+                    }
+                }
+
+                if (GUILayout.Button("Update Sections Label"))
 		{
-			var readmeObject = AssetDatabase.LoadMainAssetAtPath(AssetDatabase.GUIDToAssetPath(ids[0]));
+                    ResetSectionsLabel(readme);
+                }
+
+                EditorGUILayout.EndVertical();
+
+                //ImportOptions
+                return;
+            }
+
+
+            DrawInspectorGUI(readme);
+            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+            showInEditMode = EditorGUILayout.Toggle("Show in Edit Mode", showInEditMode);
+            EditorGUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal(EditorStyles.toolbar);
 			
 			Selection.objects = new UnityEngine.Object[]{readmeObject};
 			
-			return (Readme)readmeObject;
+            GUI.enabled = readme.prevReadme != null;
+            if (GUILayout.Button(prevReadmeTitle, EditorStyles.toolbarButton))
+            {
+                Selection.objects = new UnityEngine.Object[] { readme.prevReadme };
 		}
-		else
+
+            GUI.enabled = readme.nextReadme != null;
+            if (GUILayout.Button(nextReadmeTitle, EditorStyles.toolbarButton))
 		{
-			Debug.Log("Couldn't find a readme");
-			return null;
+                Selection.objects = new UnityEngine.Object[] { readme.nextReadme };
+
 		}
+
+            GUI.enabled = true;
+
+            GUILayout.EndHorizontal();
 	}
 	
-	protected override void OnHeaderGUI()
+        public static void DrawHeaderGUI(Readme readme)
 	{
-		var readme = (Readme)target;
-		Init();
+            if (readme == null)
+                return;
 		
-		var iconWidth = Mathf.Min(EditorGUIUtility.currentViewWidth/3f - 20f, 128f);
+            var iconWidth = Mathf.Min(EditorGUIUtility.currentViewWidth / 3f - 20f, 128f);
 		
 		GUILayout.BeginHorizontal("In BigTitle");
 		{
+
 			GUILayout.Label(readme.icon, GUILayout.Width(iconWidth), GUILayout.Height(iconWidth));
-			GUILayout.Label(readme.title, TitleStyle);
+                GUILayout.Label(readme.title, ReadmeEditorStyles.TitleStyle, GUILayout.ExpandHeight(true));
+
 		}
 		GUILayout.EndHorizontal();
 	}
-	
-	public override void OnInspectorGUI()
+        public static void DrawInspectorGUI(Readme readme)
 	{
-		var readme = (Readme)target;
-		Init();
+            if (readme == null)
+                return;
+            if (readme.sections == null)
+                return;
 		
 		foreach (var section in readme.sections)
 		{
 			if (!string.IsNullOrEmpty(section.heading))
 			{
-				GUILayout.Label(section.heading, HeadingStyle);
+                    section.name = "Header -" + section.heading;
+
+                    GUILayout.Label(section.heading, ReadmeEditorStyles.HeadingStyle);
+
+                    //Add Horizontal Bar
+                    if (section.heading != "") { EditorGUILayout.LabelField("", GUI.skin.horizontalSlider); }
 			}
 			if (!string.IsNullOrEmpty(section.text))
 			{
-				GUILayout.Label(section.text, BodyStyle);
+                    if (string.IsNullOrEmpty(section.name))
+                        section.name = "Text: " + section.text;
+
+                    GUILayout.Label(section.text, ReadmeEditorStyles.BodyStyle);
 			}
 			if (!string.IsNullOrEmpty(section.linkText))
 			{
-				if (LinkLabel(new GUIContent(section.linkText)))
+
+                    if (string.IsNullOrEmpty(section.name))
+                        section.name = "Link: " + section.text;
+
+                    if (ReadmeEditorStyles.LinkLabel(new GUIContent(section.linkText)))
 				{
 					Application.OpenURL(section.url);
 				}
 			}
 			GUILayout.Space(kSpace);
+
+                if (section.name.Length > 20)
+                {
+                    section.name = section.name.Remove(17);
+                    section.name += "...";
+                }
+
+            }
 		}
+        public static void DrawImport(Readme readme)
+        {
+
 	}
+        private void ResetSectionsLabel(Readme readme)
+        {
+
+            foreach (var section in readme.sections)
+            {
+                section.name = "";
 	
+                if (!string.IsNullOrEmpty(section.heading))
+                {
+                    section.name = "Header -" + section.heading;
 	
-	bool m_Initialized;
+                }
+                if (!string.IsNullOrEmpty(section.text))
+                {
+                    if (string.IsNullOrEmpty(section.name))
+                        section.name = "Text: " + section.text;
 	
-	GUIStyle LinkStyle { get { return m_LinkStyle; } }
-	[SerializeField] GUIStyle m_LinkStyle;
+                }
+                if (!string.IsNullOrEmpty(section.linkText))
+                {
 	
-	GUIStyle TitleStyle { get { return m_TitleStyle; } }
-	[SerializeField] GUIStyle m_TitleStyle;
+                    if (string.IsNullOrEmpty(section.name))
+                        section.name = "Link: " + section.text;
 	
 	GUIStyle HeadingStyle { get { return m_HeadingStyle; } }
 	[SerializeField] GUIStyle m_HeadingStyle;
 	
-	GUIStyle BodyStyle { get { return m_BodyStyle; } }
-	[SerializeField] GUIStyle m_BodyStyle;
+                }
 	
-	void Init()
+                if (section.name.Length > 20)
 	{
-		if (m_Initialized)
-			return;
-		m_BodyStyle = new GUIStyle(EditorStyles.label);
-		m_BodyStyle.wordWrap = true;
-		m_BodyStyle.fontSize = 14;
+                    section.name = section.name.Remove(17);
+                    section.name += "...";
+                }
 		
-		m_TitleStyle = new GUIStyle(m_BodyStyle);
-		m_TitleStyle.fontSize = 26;
+            }
+
+        }
+
+        static List<Readme> GetAllRootReadme()
+        {
+            var ids = AssetDatabase.FindAssets("Readme t:Readme");
+            List<Readme> results = new List<Readme>();
 		
-		m_HeadingStyle = new GUIStyle(m_BodyStyle);
-		m_HeadingStyle.fontSize = 18 ;
+            foreach (string guid in ids)
+            {
+                var readmeObject = AssetDatabase.LoadMainAssetAtPath(AssetDatabase.GUIDToAssetPath(guid));
 		
-		m_LinkStyle = new GUIStyle(m_BodyStyle);
-		m_LinkStyle.wordWrap = false;
-		// Match selection color which works nicely for both light and dark skins
-		m_LinkStyle.normal.textColor = new Color (0x00/255f, 0x78/255f, 0xDA/255f, 1f);
-		m_LinkStyle.stretchWidth = false;
+                Readme readme = (Readme)readmeObject;
+                if (readme.isRoot)
+                {
+                    results.Add(readme);
 		
 		m_Initialized = true;
 	}
+            }
 	
 	bool LinkLabel (GUIContent label, params GUILayoutOption[] options)
 	{
@@ -150,9 +299,31 @@ public class ReadmeEditor : Editor {
 		Handles.color = Color.white;
 		Handles.EndGUI ();
 
-		EditorGUIUtility.AddCursorRect (position, MouseCursor.Link);
+            return results; ;
+        }
+        static Readme GetReadmeRoot()
+        {
+            Readme result = GetAllRootReadme().FirstOrDefault();
+            //Ensures that there is only one readme as root.
+            if (result != null)
+            {
+                ResetAllRootReadme();
+                result.isRoot = true;
+            }
+            return result;
 
-		return GUI.Button (position, label, LinkStyle);
+        }
+        static void ResetAllRootReadme()
+        {
+            foreach (Readme readme in GetAllRootReadme())
+            {
+                readme.isRoot = false;
+            }
 	}
 }
 
+
+
+
+
+}
