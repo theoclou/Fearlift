@@ -3,21 +3,29 @@ using UnityEngine;
 public class PlankPhysics : MonoBehaviour
 {
     private Rigidbody rb;
+    public Transform player; // Référence au XR Rig ou Main Camera
+    public float activationDistance = 0.5f;
+    private bool hasFallen = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.isKinematic = false;
-        rb.useGravity = true;
+        //rb.isKinematic = true; // reste en place au début
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void Update()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (player == null)
         {
-            // Appliquer une petite force en fonction du point d'impact
-            Vector3 forceDir = -transform.up + collision.relativeVelocity.normalized;
-            rb.AddForce(forceDir * 10f, ForceMode.Impulse);
+            Debug.LogError("❌ PlankPhysics: 'player' non assigné sur l'objet → " + gameObject.name);
+            return;
+        }
+
+        if (!hasFallen && Vector3.Distance(transform.position, player.position) < activationDistance)
+        {
+            rb.isKinematic = false;
+            rb.AddForce(-transform.up * 3f, ForceMode.Impulse);
+            hasFallen = true;
         }
     }
 }
