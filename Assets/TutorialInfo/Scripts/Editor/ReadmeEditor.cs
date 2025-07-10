@@ -298,15 +298,9 @@ namespace ReadmeSystem.Editor
             }
             return result;
 
-        }
-        static void ResetAllRootReadme()
-        {
-            foreach (Readme readme in GetAllRootReadme())
-            {
-                readme.isRoot = false;
-            }
-        }
-    }
+		return GUI.Button (position, label, LinkStyle);
+	}
+}
 
 
 
