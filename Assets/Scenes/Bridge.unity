@@ -180,12 +180,11 @@ GameObject:
   - component: {fileID: 5143641}
   - component: {fileID: 5143640}
   - component: {fileID: 5143637}
-  - component: {fileID: 5143643}
   - component: {fileID: 5143639}
   - component: {fileID: 5143638}
   m_Layer: 0
   m_Name: P (52)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -273,7 +272,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 670763422}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -345,18 +344,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &5143643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5143636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5669887
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +725,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1653857175}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -3585,12 +3572,11 @@ GameObject:
   - component: {fileID: 106770347}
   - component: {fileID: 106770346}
   - component: {fileID: 106770342}
-  - component: {fileID: 106770349}
   - component: {fileID: 106770345}
   - component: {fileID: 106770344}
   m_Layer: 0
   m_Name: P (30)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3678,7 +3664,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1173262094}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -3750,18 +3736,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &106770349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106770341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &108018869
 GameObject:
   m_ObjectHideFlags: 0
@@ -4156,12 +4130,11 @@ GameObject:
   - component: {fileID: 118477652}
   - component: {fileID: 118477651}
   - component: {fileID: 118477648}
-  - component: {fileID: 118477654}
   - component: {fileID: 118477650}
   - component: {fileID: 118477649}
   m_Layer: 0
   m_Name: P (57)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4249,7 +4222,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1829075039}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -4321,18 +4294,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &118477654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118477647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &122131515
 GameObject:
   m_ObjectHideFlags: 0
@@ -4345,12 +4306,11 @@ GameObject:
   - component: {fileID: 122131521}
   - component: {fileID: 122131520}
   - component: {fileID: 122131516}
-  - component: {fileID: 122131523}
   - component: {fileID: 122131519}
   - component: {fileID: 122131518}
   m_Layer: 0
   m_Name: P (3)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4438,7 +4398,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 684715651}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -4510,18 +4470,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &122131523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122131515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &127495600
 GameObject:
   m_ObjectHideFlags: 0
@@ -4626,7 +4574,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1386622917}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -5017,12 +4965,11 @@ GameObject:
   - component: {fileID: 136755643}
   - component: {fileID: 136755642}
   - component: {fileID: 136755639}
-  - component: {fileID: 136755645}
   - component: {fileID: 136755641}
   - component: {fileID: 136755640}
   m_Layer: 0
   m_Name: P (65)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5110,7 +5057,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 935382605}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -5182,18 +5129,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &136755645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 136755638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &137394515
 GameObject:
   m_ObjectHideFlags: 0
@@ -5637,12 +5572,11 @@ GameObject:
   - component: {fileID: 147727210}
   - component: {fileID: 147727209}
   - component: {fileID: 147727205}
-  - component: {fileID: 147727212}
   - component: {fileID: 147727208}
   - component: {fileID: 147727207}
   m_Layer: 0
   m_Name: P (31)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5730,7 +5664,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 106770342}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -5802,18 +5736,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &147727212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147727204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &152925505
 GameObject:
   m_ObjectHideFlags: 0
@@ -6346,7 +6268,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1826732153}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -12749,12 +12671,11 @@ GameObject:
   - component: {fileID: 219578586}
   - component: {fileID: 219578585}
   - component: {fileID: 219578581}
-  - component: {fileID: 219578588}
   - component: {fileID: 219578584}
   - component: {fileID: 219578583}
   m_Layer: 0
   m_Name: P (18)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12842,7 +12763,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 589329919}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -12914,18 +12835,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &219578588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219578580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &233341108
 GameObject:
   m_ObjectHideFlags: 0
@@ -12938,12 +12847,11 @@ GameObject:
   - component: {fileID: 233341113}
   - component: {fileID: 233341112}
   - component: {fileID: 233341109}
-  - component: {fileID: 233341115}
   - component: {fileID: 233341111}
   - component: {fileID: 233341110}
   m_Layer: 0
   m_Name: P (59)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13031,7 +12939,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1146839392}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -13103,18 +13011,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &233341115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233341108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &242741019
 GameObject:
   m_ObjectHideFlags: 0
@@ -13127,12 +13023,11 @@ GameObject:
   - component: {fileID: 242741025}
   - component: {fileID: 242741024}
   - component: {fileID: 242741020}
-  - component: {fileID: 242741027}
   - component: {fileID: 242741023}
   - component: {fileID: 242741022}
   m_Layer: 0
   m_Name: P (36)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13220,7 +13115,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 2031431709}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -13292,18 +13187,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &242741027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242741019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &255325937
 GameObject:
   m_ObjectHideFlags: 0
@@ -13316,12 +13199,11 @@ GameObject:
   - component: {fileID: 255325943}
   - component: {fileID: 255325942}
   - component: {fileID: 255325941}
-  - component: {fileID: 255325944}
   - component: {fileID: 255325940}
   - component: {fileID: 255325939}
   m_Layer: 0
   m_Name: P (69)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13397,7 +13279,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 576960322}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -13481,18 +13363,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255325937}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &255325944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255325937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &264042611
 GameObject:
   m_ObjectHideFlags: 0
@@ -13597,7 +13467,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1504263911}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -13773,7 +13643,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1056103652}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -13949,7 +13819,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1403378693}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -14659,7 +14529,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 2129933352}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -14743,12 +14613,11 @@ GameObject:
   - component: {fileID: 335154603}
   - component: {fileID: 335154602}
   - component: {fileID: 335154599}
-  - component: {fileID: 335154605}
   - component: {fileID: 335154601}
   - component: {fileID: 335154600}
   m_Layer: 0
   m_Name: P (61)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14836,7 +14705,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 586748732}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -14908,18 +14777,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &335154605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335154598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &342080538
 GameObject:
   m_ObjectHideFlags: 0
@@ -14932,12 +14789,11 @@ GameObject:
   - component: {fileID: 342080544}
   - component: {fileID: 342080543}
   - component: {fileID: 342080539}
-  - component: {fileID: 342080546}
   - component: {fileID: 342080542}
   - component: {fileID: 342080541}
   m_Layer: 0
   m_Name: P (38)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15025,7 +14881,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1935498702}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -15097,18 +14953,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &342080546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342080538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &344639256
 GameObject:
   m_ObjectHideFlags: 0
@@ -15121,12 +14965,11 @@ GameObject:
   - component: {fileID: 344639262}
   - component: {fileID: 344639261}
   - component: {fileID: 344639257}
-  - component: {fileID: 344639264}
   - component: {fileID: 344639260}
   - component: {fileID: 344639259}
   m_Layer: 0
   m_Name: P (14)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15214,7 +15057,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1222534700}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -15286,18 +15129,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &344639264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344639256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &363853717
 GameObject:
   m_ObjectHideFlags: 0
@@ -15328,6 +15159,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1012894647}
+  - {fileID: 1057808672}
+  - {fileID: 630818346}
   - {fileID: 787449003}
   - {fileID: 1655734791}
   - {fileID: 926525625}
@@ -15374,12 +15207,11 @@ GameObject:
   - component: {fileID: 374872359}
   - component: {fileID: 374872358}
   - component: {fileID: 374872354}
-  - component: {fileID: 374872361}
   - component: {fileID: 374872357}
   - component: {fileID: 374872356}
   m_Layer: 0
   m_Name: P (11)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15467,7 +15299,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 609949825}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -15539,18 +15371,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &374872361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374872353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &378992554
 GameObject:
   m_ObjectHideFlags: 0
@@ -15842,12 +15662,11 @@ GameObject:
   - component: {fileID: 395139932}
   - component: {fileID: 395139931}
   - component: {fileID: 395139927}
-  - component: {fileID: 395139934}
   - component: {fileID: 395139930}
   - component: {fileID: 395139929}
   m_Layer: 0
   m_Name: P (41)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15935,7 +15754,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 432921347}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -16007,18 +15826,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &395139934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 395139926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &398776078
 GameObject:
   m_ObjectHideFlags: 0
@@ -16701,7 +16508,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 9670146}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -16976,12 +16783,11 @@ GameObject:
   - component: {fileID: 432921352}
   - component: {fileID: 432921351}
   - component: {fileID: 432921347}
-  - component: {fileID: 432921354}
   - component: {fileID: 432921350}
   - component: {fileID: 432921349}
   m_Layer: 0
   m_Name: P (40)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17069,7 +16875,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 544285246}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -17141,18 +16947,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &432921354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432921346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &441756264
 GameObject:
   m_ObjectHideFlags: 0
@@ -18056,7 +17850,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1175141841}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -19031,7 +18825,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1899932028}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -19759,7 +19553,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1141927992}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -19843,11 +19637,10 @@ GameObject:
   - component: {fileID: 544285249}
   - component: {fileID: 544285248}
   - component: {fileID: 544285246}
-  - component: {fileID: 544285251}
   - component: {fileID: 544285247}
   m_Layer: 0
   m_Name: P (39)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19890,7 +19683,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 342080539}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -19962,18 +19755,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &544285251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544285245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &548055987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20295,12 +20076,11 @@ GameObject:
   - component: {fileID: 576960326}
   - component: {fileID: 576960325}
   - component: {fileID: 576960322}
-  - component: {fileID: 576960328}
   - component: {fileID: 576960324}
   - component: {fileID: 576960323}
   m_Layer: 0
   m_Name: P (68)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20388,7 +20168,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1623096215}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -20460,18 +20240,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &576960328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576960321}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &580286156
 GameObject:
   m_ObjectHideFlags: 0
@@ -20675,12 +20443,11 @@ GameObject:
   - component: {fileID: 582730429}
   - component: {fileID: 582730428}
   - component: {fileID: 582730427}
-  - component: {fileID: 582730430}
   - component: {fileID: 582730426}
   - component: {fileID: 582730425}
   m_Layer: 0
   m_Name: P (46)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20756,7 +20523,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1766430068}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -20840,18 +20607,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582730422}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &582730430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582730422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &586748731
 GameObject:
   m_ObjectHideFlags: 0
@@ -20864,12 +20619,11 @@ GameObject:
   - component: {fileID: 586748736}
   - component: {fileID: 586748735}
   - component: {fileID: 586748732}
-  - component: {fileID: 586748738}
   - component: {fileID: 586748734}
   - component: {fileID: 586748733}
   m_Layer: 0
   m_Name: P (60)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20957,7 +20711,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 233341109}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -21029,18 +20783,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &586748738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 586748731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &589329918
 GameObject:
   m_ObjectHideFlags: 0
@@ -21053,12 +20795,11 @@ GameObject:
   - component: {fileID: 589329924}
   - component: {fileID: 589329923}
   - component: {fileID: 589329919}
-  - component: {fileID: 589329926}
   - component: {fileID: 589329922}
   - component: {fileID: 589329921}
   m_Layer: 0
   m_Name: P (17)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21146,7 +20887,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 681664473}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -21218,18 +20959,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &589329926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589329918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &595649621
 GameObject:
   m_ObjectHideFlags: 0
@@ -21433,12 +21162,11 @@ GameObject:
   - component: {fileID: 607220206}
   - component: {fileID: 607220205}
   - component: {fileID: 607220202}
-  - component: {fileID: 607220208}
   - component: {fileID: 607220204}
   - component: {fileID: 607220203}
   m_Layer: 0
   m_Name: P (63)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21526,7 +21254,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 783088333}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -21598,18 +21326,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &607220208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 607220201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &609949824
 GameObject:
   m_ObjectHideFlags: 0
@@ -21622,12 +21338,11 @@ GameObject:
   - component: {fileID: 609949830}
   - component: {fileID: 609949829}
   - component: {fileID: 609949825}
-  - component: {fileID: 609949832}
   - component: {fileID: 609949828}
   - component: {fileID: 609949827}
   m_Layer: 0
   m_Name: P (10)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21715,7 +21430,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1722525973}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -21787,18 +21502,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &609949832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 609949824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &610021589
 GameObject:
   m_ObjectHideFlags: 0
@@ -22023,12 +21726,11 @@ GameObject:
   - component: {fileID: 614578287}
   - component: {fileID: 614578286}
   - component: {fileID: 614578283}
-  - component: {fileID: 614578289}
   - component: {fileID: 614578285}
   - component: {fileID: 614578284}
   m_Layer: 0
   m_Name: P (55)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22116,7 +21818,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1005548601}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -22188,18 +21890,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &614578289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614578282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &618975638
 GameObject:
   m_ObjectHideFlags: 0
@@ -22819,7 +22509,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1942145230}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -22995,7 +22685,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 2084747461}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -23067,6 +22757,96 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1197561746}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
+--- !u!1 &630818345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 630818346}
+  - component: {fileID: 630818349}
+  - component: {fileID: 630818348}
+  - component: {fileID: 630818347}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &630818346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630818345}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.057523232, z: -0, w: 0.99834424}
+  m_LocalPosition: {x: -2.95, y: 14.12, z: -27.36}
+  m_LocalScale: {x: 3, y: 1, z: 16}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 363853718}
+  m_LocalEulerAnglesHint: {x: 0, y: 6.595, z: 0}
+--- !u!54 &630818347
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630818345}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &630818348
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630818345}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &630818349
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 630818345}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &636474210
 GameObject:
   m_ObjectHideFlags: 0
@@ -24088,7 +23868,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1319882603}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -24172,12 +23952,11 @@ GameObject:
   - component: {fileID: 670763426}
   - component: {fileID: 670763425}
   - component: {fileID: 670763422}
-  - component: {fileID: 670763428}
   - component: {fileID: 670763424}
   - component: {fileID: 670763423}
   m_Layer: 0
   m_Name: P (51)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24265,7 +24044,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1221887184}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -24337,18 +24116,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &670763428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 670763421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &675648478
 GameObject:
   m_ObjectHideFlags: 0
@@ -24453,7 +24220,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 624538165}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -24661,38 +24428,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677369101}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &678483062 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+--- !u!4 &678483075 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
   m_PrefabInstance: {fileID: 1893590562}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &678483069
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678483062}
-  serializedVersion: 5
-  m_Mass: 70
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &678861230
 GameObject:
   m_ObjectHideFlags: 0
@@ -24831,6 +24571,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678861230}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &678979843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 678979844}
+  - component: {fileID: 678979845}
+  m_Layer: 0
+  m_Name: BridgeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &678979844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678979843}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.848, y: 3.9570498, z: 32.701645}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 908552263}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &678979845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678979843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d51037727bb03469e9803321550d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 678483075}
+  targetToMove: {fileID: 630818346}
+  yThreshold: -1.2
+  moveDistance: 3
+  moveSpeed: 1
 --- !u!1 &681349619
 GameObject:
   m_ObjectHideFlags: 0
@@ -24896,12 +24685,11 @@ GameObject:
   - component: {fileID: 681664478}
   - component: {fileID: 681664477}
   - component: {fileID: 681664473}
-  - component: {fileID: 681664480}
   - component: {fileID: 681664476}
   - component: {fileID: 681664475}
   m_Layer: 0
   m_Name: P (16)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24989,7 +24777,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 765719129}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -25061,18 +24849,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &681664480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 681664472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &683275498
 GameObject:
   m_ObjectHideFlags: 0
@@ -25276,12 +25052,11 @@ GameObject:
   - component: {fileID: 684715656}
   - component: {fileID: 684715655}
   - component: {fileID: 684715651}
-  - component: {fileID: 684715658}
   - component: {fileID: 684715654}
   - component: {fileID: 684715653}
   m_Layer: 0
   m_Name: P (2)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25369,7 +25144,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 2078609375}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -25441,18 +25216,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &684715658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 684715650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &692029059
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25855,7 +25618,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 987376028}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -26039,12 +25802,11 @@ GameObject:
   - component: {fileID: 715964359}
   - component: {fileID: 715964358}
   - component: {fileID: 715964354}
-  - component: {fileID: 715964361}
   - component: {fileID: 715964357}
   - component: {fileID: 715964356}
   m_Layer: 0
   m_Name: P (7)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26132,7 +25894,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1456422157}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -26204,18 +25966,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &715964361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715964353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &722781730
 GameObject:
   m_ObjectHideFlags: 0
@@ -28236,12 +27986,11 @@ GameObject:
   - component: {fileID: 765719134}
   - component: {fileID: 765719133}
   - component: {fileID: 765719129}
-  - component: {fileID: 765719136}
   - component: {fileID: 765719132}
   - component: {fileID: 765719131}
   m_Layer: 0
   m_Name: P (15)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28329,7 +28078,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 344639257}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -28401,18 +28150,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &765719136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 765719128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &775402174
 GameObject:
   m_ObjectHideFlags: 0
@@ -33638,12 +33375,11 @@ GameObject:
   - component: {fileID: 783088337}
   - component: {fileID: 783088336}
   - component: {fileID: 783088333}
-  - component: {fileID: 783088339}
   - component: {fileID: 783088335}
   - component: {fileID: 783088334}
   m_Layer: 0
   m_Name: P (62)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33731,7 +33467,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 335154599}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -33803,18 +33539,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &783088339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783088332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &783252832
 GameObject:
   m_ObjectHideFlags: 0
@@ -34511,7 +34235,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 127495601}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -35014,7 +34738,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 817173877}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -35310,12 +35034,11 @@ GameObject:
   - component: {fileID: 814875456}
   - component: {fileID: 814875455}
   - component: {fileID: 814875452}
-  - component: {fileID: 814875458}
   - component: {fileID: 814875454}
   - component: {fileID: 814875453}
   m_Layer: 0
   m_Name: P (49)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35403,7 +35126,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1129145762}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -35475,18 +35198,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &814875458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814875451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &817173876
 GameObject:
   m_ObjectHideFlags: 0
@@ -35591,7 +35302,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 2081229376}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -36057,12 +35768,11 @@ GameObject:
   - component: {fileID: 852140663}
   - component: {fileID: 852140662}
   - component: {fileID: 852140658}
-  - component: {fileID: 852140665}
   - component: {fileID: 852140661}
   - component: {fileID: 852140660}
   m_Layer: 0
   m_Name: P (42)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36150,7 +35860,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 395139927}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -36222,18 +35932,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &852140665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 852140657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &859733798
 GameObject:
   m_ObjectHideFlags: 0
@@ -36615,7 +36313,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1532286701}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -36998,12 +36696,11 @@ GameObject:
   - component: {fileID: 883281912}
   - component: {fileID: 883281911}
   - component: {fileID: 883281907}
-  - component: {fileID: 883281914}
   - component: {fileID: 883281910}
   - component: {fileID: 883281909}
   m_Layer: 0
   m_Name: P (12)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37091,7 +36788,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 374872354}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -37163,18 +36860,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &883281914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883281906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &886395741
 GameObject:
   m_ObjectHideFlags: 0
@@ -37973,8 +37658,139 @@ Transform:
   - {fileID: 2064753890}
   - {fileID: 1197561746}
   - {fileID: 1945685018}
+  - {fileID: 678979844}
   m_Father: {fileID: 138210512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &910227355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 910227356}
+  - component: {fileID: 910227360}
+  - component: {fileID: 910227359}
+  - component: {fileID: 910227358}
+  - component: {fileID: 910227357}
+  m_Layer: 0
+  m_Name: Ending (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &910227356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910227355}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.99813396, z: -0, w: 0.061063815}
+  m_LocalPosition: {x: 16.87, y: 5.58, z: -8.93}
+  m_LocalScale: {x: 1.4999998, y: 0.1, z: 0.30000013}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1006866181}
+  m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
+--- !u!59 &910227357
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910227355}
+  serializedVersion: 3
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0, z: -0.5}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 0
+  m_ExtendedLimits: 0
+  m_UseAcceleration: 0
+  m_Limits:
+    min: 0
+    max: 0
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!54 &910227358
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910227355}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &910227359
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910227355}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &910227360
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910227355}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &915532220
 GameObject:
   m_ObjectHideFlags: 0
@@ -38270,7 +38086,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 865368761}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -38492,12 +38308,11 @@ GameObject:
   - component: {fileID: 935382609}
   - component: {fileID: 935382608}
   - component: {fileID: 935382605}
-  - component: {fileID: 935382611}
   - component: {fileID: 935382607}
   - component: {fileID: 935382606}
   m_Layer: 0
   m_Name: P (64)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38585,7 +38400,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 607220202}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -38657,18 +38472,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &935382611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935382604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &937371917
 GameObject:
   m_ObjectHideFlags: 0
@@ -38872,12 +38675,11 @@ GameObject:
   - component: {fileID: 940982336}
   - component: {fileID: 940982335}
   - component: {fileID: 940982332}
-  - component: {fileID: 940982338}
   - component: {fileID: 940982334}
   - component: {fileID: 940982333}
   m_Layer: 0
   m_Name: P (66)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38965,7 +38767,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 136755639}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -39037,18 +38839,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &940982338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 940982331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &943875535
 GameObject:
   m_ObjectHideFlags: 0
@@ -40902,7 +40692,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 625184758}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -41855,12 +41645,11 @@ GameObject:
   - component: {fileID: 1005548605}
   - component: {fileID: 1005548604}
   - component: {fileID: 1005548601}
-  - component: {fileID: 1005548607}
   - component: {fileID: 1005548603}
   - component: {fileID: 1005548602}
   m_Layer: 0
   m_Name: P (54)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41948,7 +41737,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1107512738}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -42020,18 +41809,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1005548607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005548600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1006866180
 GameObject:
   m_ObjectHideFlags: 0
@@ -42066,8 +41843,11 @@ Transform:
   - {fileID: 1495561097}
   - {fileID: 1530619595}
   - {fileID: 162141593}
+  - {fileID: 1074919219}
+  - {fileID: 910227356}
   - {fileID: 207038685}
   - {fileID: 2095711845}
+  - {fileID: 1450538837}
   m_Father: {fileID: 62965438}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1006971828
@@ -42082,12 +41862,11 @@ GameObject:
   - component: {fileID: 1006971833}
   - component: {fileID: 1006971832}
   - component: {fileID: 1006971829}
-  - component: {fileID: 1006971835}
   - component: {fileID: 1006971831}
   - component: {fileID: 1006971830}
   m_Layer: 0
   m_Name: P (47)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42175,7 +41954,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 582730427}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -42247,18 +42026,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1006971835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1006971828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1012894646
 GameObject:
   m_ObjectHideFlags: 0
@@ -42996,7 +42763,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 264042612}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -43068,6 +42835,96 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1197561746}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
+--- !u!1 &1057808669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1057808672}
+  - component: {fileID: 1057808673}
+  - component: {fileID: 1057808670}
+  - component: {fileID: 1057808674}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1057808670
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057808669}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1057808672
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057808669}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.057523232, z: -0, w: 0.99834424}
+  m_LocalPosition: {x: 0.27916908, y: 13.73, z: 0.23637962}
+  m_LocalScale: {x: 3, y: 1, z: 20}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 363853718}
+  m_LocalEulerAnglesHint: {x: 0, y: 6.595, z: 0}
+--- !u!33 &1057808673
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057808669}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1057808674
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057808669}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1060552340
 GameObject:
   m_ObjectHideFlags: 0
@@ -43271,12 +43128,11 @@ GameObject:
   - component: {fileID: 1067948576}
   - component: {fileID: 1067948575}
   - component: {fileID: 1067948571}
-  - component: {fileID: 1067948578}
   - component: {fileID: 1067948574}
   - component: {fileID: 1067948573}
   m_Layer: 0
   m_Name: P (27)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43364,7 +43220,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1349040717}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -43436,18 +43292,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1067948578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1067948570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1069975683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43538,6 +43382,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400124, guid: 2d22c1b2dd1214c4d835fd1f6d436db7, type: 3}
   m_PrefabInstance: {fileID: 1069975683}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1074919215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1074919219}
+  - component: {fileID: 1074919218}
+  - component: {fileID: 1074919217}
+  - component: {fileID: 1074919216}
+  m_Layer: 0
+  m_Name: StartingAnchor (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!54 &1074919216
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074919215}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1074919217
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074919215}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1074919218
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074919215}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1074919219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074919215}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.99813396, z: -0, w: 0.061063815}
+  m_LocalPosition: {x: 20.107866, y: 5.58, z: 17.625961}
+  m_LocalScale: {x: 1.4999998, y: 0.1, z: 0.30000013}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1006866181}
+  m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
 --- !u!1 &1083928380
 GameObject:
   m_ObjectHideFlags: 0
@@ -44097,12 +44031,11 @@ GameObject:
   - component: {fileID: 1107512742}
   - component: {fileID: 1107512741}
   - component: {fileID: 1107512738}
-  - component: {fileID: 1107512744}
   - component: {fileID: 1107512740}
   - component: {fileID: 1107512739}
   m_Layer: 0
   m_Name: P (53)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44190,7 +44123,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 5143637}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -44262,18 +44195,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1107512744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1107512737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1107524466
 GameObject:
   m_ObjectHideFlags: 0
@@ -44378,7 +44299,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 714374178}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -45268,12 +45189,11 @@ GameObject:
   - component: {fileID: 1129145766}
   - component: {fileID: 1129145765}
   - component: {fileID: 1129145762}
-  - component: {fileID: 1129145768}
   - component: {fileID: 1129145764}
   - component: {fileID: 1129145763}
   m_Layer: 0
   m_Name: P (48)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45361,7 +45281,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1006971829}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -45433,18 +45353,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1129145768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129145761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1141927991
 GameObject:
   m_ObjectHideFlags: 0
@@ -45549,7 +45457,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1553384309}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -45633,12 +45541,11 @@ GameObject:
   - component: {fileID: 1146839396}
   - component: {fileID: 1146839395}
   - component: {fileID: 1146839392}
-  - component: {fileID: 1146839398}
   - component: {fileID: 1146839394}
   - component: {fileID: 1146839393}
   m_Layer: 0
   m_Name: P (58)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45726,7 +45633,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 118477648}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -45798,18 +45705,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1146839398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146839391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1151229700
 GameObject:
   m_ObjectHideFlags: 0
@@ -46220,12 +46115,11 @@ GameObject:
   - component: {fileID: 1173262099}
   - component: {fileID: 1173262098}
   - component: {fileID: 1173262094}
-  - component: {fileID: 1173262101}
   - component: {fileID: 1173262097}
   - component: {fileID: 1173262096}
   m_Layer: 0
   m_Name: P (29)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46313,7 +46207,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1175143613}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -46385,18 +46279,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1173262101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173262093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1175141840
 GameObject:
   m_ObjectHideFlags: 0
@@ -46501,7 +46383,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 427912251}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -46585,12 +46467,11 @@ GameObject:
   - component: {fileID: 1175143618}
   - component: {fileID: 1175143617}
   - component: {fileID: 1175143613}
-  - component: {fileID: 1175143620}
   - component: {fileID: 1175143616}
   - component: {fileID: 1175143615}
   m_Layer: 0
   m_Name: P (28)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46678,7 +46559,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1067948571}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -46750,18 +46631,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1175143620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175143612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1180199228
 GameObject:
   m_ObjectHideFlags: 0
@@ -47355,7 +47224,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1405452872}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -47439,12 +47308,11 @@ GameObject:
   - component: {fileID: 1213888588}
   - component: {fileID: 1213888587}
   - component: {fileID: 1213888583}
-  - component: {fileID: 1213888590}
   - component: {fileID: 1213888586}
   - component: {fileID: 1213888585}
   m_Layer: 0
   m_Name: P (4)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47532,7 +47400,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 122131516}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -47604,18 +47472,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1213888590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213888582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1215759418
 GameObject:
   m_ObjectHideFlags: 0
@@ -47886,12 +47742,11 @@ GameObject:
   - component: {fileID: 1221887188}
   - component: {fileID: 1221887187}
   - component: {fileID: 1221887184}
-  - component: {fileID: 1221887190}
   - component: {fileID: 1221887186}
   - component: {fileID: 1221887185}
   m_Layer: 0
   m_Name: P (50)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47979,7 +47834,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 814875452}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -48051,18 +47906,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1221887190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221887183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1222138320
 GameObject:
   m_ObjectHideFlags: 0
@@ -48266,12 +48109,11 @@ GameObject:
   - component: {fileID: 1222534704}
   - component: {fileID: 1222534703}
   - component: {fileID: 1222534700}
-  - component: {fileID: 1222534706}
   - component: {fileID: 1222534702}
   - component: {fileID: 1222534701}
   m_Layer: 0
   m_Name: P (13)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48359,7 +48201,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 374872354}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -48431,18 +48273,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1222534706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1222534699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1238638634
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50292,7 +50122,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1609640862}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -50376,12 +50206,11 @@ GameObject:
   - component: {fileID: 1318614892}
   - component: {fileID: 1318614891}
   - component: {fileID: 1318614887}
-  - component: {fileID: 1318614894}
   - component: {fileID: 1318614890}
   - component: {fileID: 1318614889}
   m_Layer: 0
   m_Name: P (43)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50469,7 +50298,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 852140658}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -50541,18 +50370,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1318614894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1318614886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1319446216
 GameObject:
   m_ObjectHideFlags: 0
@@ -50657,7 +50474,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1318612280}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -50833,7 +50650,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1319446217}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -51030,7 +50847,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 675648479}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -51227,7 +51044,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1703097268}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -51311,12 +51128,11 @@ GameObject:
   - component: {fileID: 1349040722}
   - component: {fileID: 1349040721}
   - component: {fileID: 1349040717}
-  - component: {fileID: 1349040724}
   - component: {fileID: 1349040720}
   - component: {fileID: 1349040719}
   m_Layer: 0
   m_Name: P (26)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51404,7 +51220,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1632620972}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -51476,18 +51292,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1349040724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1349040716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1352696410
 GameObject:
   m_ObjectHideFlags: 0
@@ -56752,7 +56556,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 798923881}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -57119,7 +56923,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 792068184}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -57486,7 +57290,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1994614378}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -57558,6 +57362,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1197561746}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
+--- !u!1001 &1409221395
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.838179
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -20.10253
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -40.58204
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1507636620937791836, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
+      propertyPath: m_Name
+      value: WaterBlock_50m
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
 --- !u!1 &1412921238
 GameObject:
   m_ObjectHideFlags: 0
@@ -58562,6 +58423,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1450538836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1450538837}
+  - component: {fileID: 1450538838}
+  m_Layer: 0
+  m_Name: BridgeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1450538837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450538836}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.987993, y: 3.9570498, z: 2.00164}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1006866181}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1450538838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450538836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d51037727bb03469e9803321550d77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 678483075}
+  targetToMove: {fileID: 1057808672}
+  yThreshold: -1.2
+  moveDistance: 3
+  moveSpeed: 1
 --- !u!1 &1451429423
 GameObject:
   m_ObjectHideFlags: 0
@@ -58765,12 +58675,11 @@ GameObject:
   - component: {fileID: 1455056817}
   - component: {fileID: 1455056816}
   - component: {fileID: 1455056812}
-  - component: {fileID: 1455056819}
   - component: {fileID: 1455056815}
   - component: {fileID: 1455056814}
   m_Layer: 0
   m_Name: P (19)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58858,7 +58767,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 219578581}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -58930,18 +58839,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1455056819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1455056811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1456422156
 GameObject:
   m_ObjectHideFlags: 0
@@ -58954,12 +58851,11 @@ GameObject:
   - component: {fileID: 1456422162}
   - component: {fileID: 1456422161}
   - component: {fileID: 1456422157}
-  - component: {fileID: 1456422164}
   - component: {fileID: 1456422160}
   - component: {fileID: 1456422159}
   m_Layer: 0
   m_Name: P (6)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59047,7 +58943,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1830276553}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -59119,18 +59015,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1456422164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456422156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1462810229
 GameObject:
   m_ObjectHideFlags: 0
@@ -59401,12 +59285,11 @@ GameObject:
   - component: {fileID: 1485536703}
   - component: {fileID: 1485536702}
   - component: {fileID: 1485536698}
-  - component: {fileID: 1485536705}
   - component: {fileID: 1485536701}
   - component: {fileID: 1485536700}
   m_Layer: 0
   m_Name: P (32)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59494,7 +59377,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 147727205}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -59566,18 +59449,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1485536705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1485536697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1487044089
 GameObject:
   m_ObjectHideFlags: 0
@@ -59855,7 +59726,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1782494995}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -60182,7 +60053,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1462810230}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -60411,7 +60282,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1804127870}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -60778,7 +60649,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1345234348}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -61544,7 +61415,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1328643991}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -62148,12 +62019,11 @@ GameObject:
   - component: {fileID: 1623096219}
   - component: {fileID: 1623096218}
   - component: {fileID: 1623096215}
-  - component: {fileID: 1623096221}
   - component: {fileID: 1623096217}
   - component: {fileID: 1623096216}
   m_Layer: 0
   m_Name: P (67)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62241,7 +62111,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 940982332}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -62313,18 +62183,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1623096221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623096214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1625735340
 GameObject:
   m_ObjectHideFlags: 0
@@ -62337,12 +62195,11 @@ GameObject:
   - component: {fileID: 1625735346}
   - component: {fileID: 1625735345}
   - component: {fileID: 1625735341}
-  - component: {fileID: 1625735348}
   - component: {fileID: 1625735344}
   - component: {fileID: 1625735343}
   m_Layer: 0
   m_Name: P
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62430,7 +62287,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1530619592}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -62502,18 +62359,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1625735348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625735340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1632620971
 GameObject:
   m_ObjectHideFlags: 0
@@ -62526,12 +62371,11 @@ GameObject:
   - component: {fileID: 1632620977}
   - component: {fileID: 1632620976}
   - component: {fileID: 1632620972}
-  - component: {fileID: 1632620979}
   - component: {fileID: 1632620975}
   - component: {fileID: 1632620974}
   m_Layer: 0
   m_Name: P (25)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62619,7 +62463,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 2105366427}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -62691,18 +62535,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1632620979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632620971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1634170242
 GameObject:
   m_ObjectHideFlags: 0
@@ -63056,7 +62888,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 176278958}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -63140,12 +62972,11 @@ GameObject:
   - component: {fileID: 1651344495}
   - component: {fileID: 1651344494}
   - component: {fileID: 1651344490}
-  - component: {fileID: 1651344497}
   - component: {fileID: 1651344493}
   - component: {fileID: 1651344492}
   m_Layer: 0
   m_Name: P (44)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63233,7 +63064,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1318614887}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -63305,18 +63136,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1651344497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1651344489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1653857174
 GameObject:
   m_ObjectHideFlags: 0
@@ -63421,7 +63240,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 2104074154}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -68773,12 +68592,11 @@ GameObject:
   - component: {fileID: 1672283388}
   - component: {fileID: 1672283387}
   - component: {fileID: 1672283383}
-  - component: {fileID: 1672283390}
   - component: {fileID: 1672283386}
   - component: {fileID: 1672283385}
   m_Layer: 0
   m_Name: P (20)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68866,7 +68684,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1455056812}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -68938,18 +68756,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1672283390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1672283382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1682190410
 GameObject:
   m_ObjectHideFlags: 0
@@ -69713,7 +69519,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1213586024}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -70384,12 +70190,11 @@ GameObject:
   - component: {fileID: 1722525978}
   - component: {fileID: 1722525977}
   - component: {fileID: 1722525973}
-  - component: {fileID: 1722525980}
   - component: {fileID: 1722525976}
   - component: {fileID: 1722525975}
   m_Layer: 0
   m_Name: P (9)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70477,7 +70282,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 2095784045}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -70549,18 +70354,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1722525980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722525972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1741121828
 GameObject:
   m_ObjectHideFlags: 0
@@ -71444,7 +71237,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 267075648}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -71540,6 +71333,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderToMove: {fileID: 0}
+  moveDistance: 0.5
+  moveSpeed: 2
 --- !u!1 &1762791147
 GameObject:
   m_ObjectHideFlags: 0
@@ -71645,12 +71441,11 @@ GameObject:
   - component: {fileID: 1765099705}
   - component: {fileID: 1765099704}
   - component: {fileID: 1765099700}
-  - component: {fileID: 1765099707}
   - component: {fileID: 1765099703}
   - component: {fileID: 1765099702}
   m_Layer: 0
   m_Name: P (33)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71738,7 +71533,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1485536698}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -71810,18 +71605,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1765099707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765099699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1766430067
 GameObject:
   m_ObjectHideFlags: 0
@@ -71834,12 +71617,11 @@ GameObject:
   - component: {fileID: 1766430073}
   - component: {fileID: 1766430072}
   - component: {fileID: 1766430068}
-  - component: {fileID: 1766430075}
   - component: {fileID: 1766430071}
   - component: {fileID: 1766430070}
   m_Layer: 0
   m_Name: P (45)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71927,7 +71709,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1651344490}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -71999,18 +71781,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1766430075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766430067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1782494994
 GameObject:
   m_ObjectHideFlags: 0
@@ -72115,7 +71885,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1107524467}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -72490,12 +72260,11 @@ GameObject:
   - component: {fileID: 1797655096}
   - component: {fileID: 1797655095}
   - component: {fileID: 1797655091}
-  - component: {fileID: 1797655098}
   - component: {fileID: 1797655094}
   - component: {fileID: 1797655093}
   m_Layer: 0
   m_Name: P (22)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72583,7 +72352,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1962630261}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -72655,18 +72424,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1797655098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797655090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1798642756
 GameObject:
   m_ObjectHideFlags: 0
@@ -72845,7 +72602,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1574492785}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -73533,7 +73290,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 331995162}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -73617,12 +73374,11 @@ GameObject:
   - component: {fileID: 1829075043}
   - component: {fileID: 1829075042}
   - component: {fileID: 1829075039}
-  - component: {fileID: 1829075045}
   - component: {fileID: 1829075041}
   - component: {fileID: 1829075040}
   m_Layer: 0
   m_Name: P (56)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73710,7 +73466,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 614578283}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -73782,18 +73538,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1829075045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829075038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1830276552
 GameObject:
   m_ObjectHideFlags: 0
@@ -73806,12 +73550,11 @@ GameObject:
   - component: {fileID: 1830276558}
   - component: {fileID: 1830276557}
   - component: {fileID: 1830276553}
-  - component: {fileID: 1830276560}
   - component: {fileID: 1830276556}
   - component: {fileID: 1830276555}
   m_Layer: 0
   m_Name: P (5)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73899,7 +73642,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1213888583}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -73971,18 +73714,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1830276560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1830276552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1839274634
 GameObject:
   m_ObjectHideFlags: 0
@@ -74113,7 +73844,7 @@ Transform:
   m_GameObject: {fileID: 1839274634}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.5, y: 6.52, z: -36.22891}
+  m_LocalPosition: {x: -17.4, y: 6.52, z: -27.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -74435,7 +74166,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1944368359}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -74907,12 +74638,11 @@ GameObject:
   - component: {fileID: 1881133134}
   - component: {fileID: 1881133133}
   - component: {fileID: 1881133129}
-  - component: {fileID: 1881133136}
   - component: {fileID: 1881133132}
   - component: {fileID: 1881133131}
   m_Layer: 0
   m_Name: P (34)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75000,7 +74730,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1765099700}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -75072,18 +74802,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1881133136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881133128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1882561996
 GameObject:
   m_ObjectHideFlags: 0
@@ -75442,15 +75160,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.47
+      value: -14.5
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.63
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.37
+      value: -2.64
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -75684,9 +75402,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 678483069}
     - targetCorrespondingSourceObject: {fileID: 1767192433, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: 1
       addedObject: {fileID: 1893590579}
@@ -75777,7 +75492,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 1f2b1f488fa32a74dbf065b776121a7b, type: 3}
   m_Resource: {fileID: 8300000, guid: 1f2b1f488fa32a74dbf065b776121a7b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.358
+  m_Volume: 0.422
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -75926,7 +75641,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 1a773f09477f91548a872282098d0dea, type: 3}
   m_Resource: {fileID: 8300000, guid: 1a773f09477f91548a872282098d0dea, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.203
+  m_Volume: 0.572
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -76446,7 +76161,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 667338703}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -77552,12 +77267,11 @@ GameObject:
   - component: {fileID: 1935498707}
   - component: {fileID: 1935498706}
   - component: {fileID: 1935498702}
-  - component: {fileID: 1935498709}
   - component: {fileID: 1935498705}
   - component: {fileID: 1935498704}
   m_Layer: 0
   m_Name: P (37)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77645,7 +77359,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 242741020}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -77717,18 +77431,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1935498709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935498701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1942145229
 GameObject:
   m_ObjectHideFlags: 0
@@ -77833,7 +77535,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 927716589}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -78009,7 +77711,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 265789032}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -78130,12 +77832,11 @@ GameObject:
   - component: {fileID: 1962630266}
   - component: {fileID: 1962630265}
   - component: {fileID: 1962630261}
-  - component: {fileID: 1962630268}
   - component: {fileID: 1962630264}
   - component: {fileID: 1962630263}
   m_Layer: 0
   m_Name: P (21)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78223,7 +77924,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1672283383}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -78295,18 +77996,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &1962630268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962630260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1964205308
 GameObject:
   m_ObjectHideFlags: 0
@@ -78774,7 +78463,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 516149189}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -79227,7 +78916,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1650631198}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -80083,12 +79772,11 @@ GameObject:
   - component: {fileID: 2031431714}
   - component: {fileID: 2031431713}
   - component: {fileID: 2031431709}
-  - component: {fileID: 2031431716}
   - component: {fileID: 2031431712}
   - component: {fileID: 2031431711}
   m_Layer: 0
   m_Name: P (35)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80176,7 +79864,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1881133129}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -80248,18 +79936,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &2031431716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2031431708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2045917199
 GameObject:
   m_ObjectHideFlags: 0
@@ -80641,7 +80317,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 467613603}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -81075,12 +80751,11 @@ GameObject:
   - component: {fileID: 2078609380}
   - component: {fileID: 2078609379}
   - component: {fileID: 2078609375}
-  - component: {fileID: 2078609382}
   - component: {fileID: 2078609378}
   - component: {fileID: 2078609377}
   m_Layer: 0
   m_Name: P (1)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81168,7 +80843,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1625735341}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -81240,18 +80915,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &2078609382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2078609374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2079423555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81456,7 +81119,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 532075126}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -81884,7 +81547,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1975428634}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -82408,12 +82071,11 @@ GameObject:
   - component: {fileID: 2095784050}
   - component: {fileID: 2095784049}
   - component: {fileID: 2095784045}
-  - component: {fileID: 2095784052}
   - component: {fileID: 2095784048}
   - component: {fileID: 2095784047}
   m_Layer: 0
   m_Name: P (8)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82501,7 +82163,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 715964354}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -82573,18 +82235,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &2095784052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095784044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2104074153
 GameObject:
   m_ObjectHideFlags: 0
@@ -82689,7 +82339,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1864096899}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -82773,12 +82423,11 @@ GameObject:
   - component: {fileID: 2105366432}
   - component: {fileID: 2105366431}
   - component: {fileID: 2105366427}
-  - component: {fileID: 2105366434}
   - component: {fileID: 2105366430}
   - component: {fileID: 2105366429}
   m_Layer: 0
   m_Name: P (24)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82866,7 +82515,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 2114544998}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -82938,18 +82587,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &2105366434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105366426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2111928044
 GameObject:
   m_ObjectHideFlags: 0
@@ -83070,12 +82707,11 @@ GameObject:
   - component: {fileID: 2114545003}
   - component: {fileID: 2114545002}
   - component: {fileID: 2114544998}
-  - component: {fileID: 2114545005}
   - component: {fileID: 2114545001}
   - component: {fileID: 2114545000}
   m_Layer: 0
   m_Name: P (23)
-  m_TagString: Untagged
+  m_TagString: BridgePlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83163,7 +82799,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 1797655091}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -83235,18 +82871,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 207038685}
   m_LocalEulerAnglesHint: {x: 0, y: 12.681, z: 0}
---- !u!114 &2114545005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114544997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fd734d77f0bab479c943da8faa80e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2121956675
 GameObject:
   m_ObjectHideFlags: 0
@@ -83733,7 +83357,7 @@ HingeJoint:
   m_ConnectedBody: {fileID: 2057073394}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: -0.5}
-  m_Axis: {x: 1, y: 0, z: 0}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 0
@@ -86903,3 +86527,4 @@ SceneRoots:
   - {fileID: 387054319}
   - {fileID: 142458754}
   - {fileID: 1517775679}
+  - {fileID: 1409221395}
