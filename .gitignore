@@ -89,4 +89,6 @@ crashlytics-build.properties
 FearLift_BurstDebugInformation_DoNotShip/
 /Exports/
 
+/ExportedData/
+
 /[Aa]ssets/TerrainDemoScene_URP
