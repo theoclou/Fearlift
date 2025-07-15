@@ -46,7 +46,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -105,10 +105,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 318845
-  packageName: 3D_Game_Assets_City
-  packageVersion: 1.0.0
-  assetPath: Assets/3D_Game_Assets_City/Models/Home/Balcony/Model/Balcony_2.fbx
-  uploadId: 752907

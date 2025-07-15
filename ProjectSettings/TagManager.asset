@@ -29,6 +29,9 @@ TagManager:
   - SamplesInfoPanel
   - QDSUIToggleCheckboxRadio
   - Car
+  - projectile
+  - FxTemporaire
+  - BridgePlank
   layers:
   - Default
   - TransparentFX

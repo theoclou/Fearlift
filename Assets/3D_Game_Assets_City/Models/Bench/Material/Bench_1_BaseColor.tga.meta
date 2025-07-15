@@ -107,7 +107,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -141,10 +141,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 318845
-  packageName: 3D_Game_Assets_City
-  packageVersion: 1.0.0
-  assetPath: Assets/3D_Game_Assets_City/Models/Bench/Material/Bench_1_BaseColor.tga
-  uploadId: 752907

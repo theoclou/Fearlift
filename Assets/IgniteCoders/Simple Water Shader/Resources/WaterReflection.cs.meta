@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/IgniteCoders/Simple Water Shader/Resources/WaterReflection.cs.meta
 guid: dfbe97460f8acd1488a82178305cdf59
 MonoImporter:
   externalObjects: {}
@@ -16,3 +17,6 @@ AssetOrigin:
   packageVersion: 1.0.0
   assetPath: Assets/IgniteCoders/Simple Water Shader/Resources/WaterReflection.cs
   uploadId: 422776
+========
+guid: c0fefceefe666bb4682b272ec8c5bdd0
+>>>>>>>> develop:Assets/PROMETEO - Car Controller/Scripts/PrometeoCarController.cs.meta
