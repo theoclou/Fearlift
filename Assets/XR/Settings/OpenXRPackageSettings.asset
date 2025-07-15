@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d28f705476c80d47acb3dfade3d3142, type: 3}
   m_Name: MetaXRFoveationFeature Standalone
   m_EditorClassIdentifier: 
-  m_enabled: 1
+  m_enabled: 0
   nameUi: Meta XR Foveation
   version: 1.0.0
   featureIdInternal: com.meta.openxr.feature.foveation
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b213d3e3c7f3109449eb46a4c8ee42f0, type: 3}
   m_Name: XrPerformanceSettingsFeature Standalone
   m_EditorClassIdentifier: 
-  m_enabled: 1
+  m_enabled: 0
   nameUi: XR Performance Settings
   version: 1.0.0
   featureIdInternal: com.unity.openxr.feature.extension.performance_settings
@@ -2000,7 +2000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f11d54adfd486544afef5e8b85f159d, type: 3}
   m_Name: SceneUnderstanding_OpenXR_API Standalone
   m_EditorClassIdentifier: 
-  m_enabled: 1
+  m_enabled: 0
   nameUi: VIVE XR Scene Understanding
   version: 0.0.1
   featureIdInternal: com.htc.openxr.sceneunderstanding.feature
@@ -2008,7 +2008,7 @@ MonoBehaviour:
   company: HTC
   priority: 0
   required: 0
-  m_XrInstance: 1750229624144
+  m_XrInstance: 1
   m_XrSession: 0
   m_systemid: 0
 --- !u!114 &7797890928706093281
