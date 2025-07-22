@@ -838,10 +838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 753141164}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
@@ -935,11 +932,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &352619073 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
-  m_PrefabInstance: {fileID: 352619067}
-  m_PrefabAsset: {fileID: 0}
 --- !u!54 &352619082
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2441,7 +2433,7 @@ RectTransform:
   m_LocalScale: {x: 0.073689, y: 0.073689, z: 0.073689}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 352619073}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -1.566, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2984,7 +2976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1507636620937791836, guid: 7097ba7ba649e1f41bba232312bdcbd8, type: 3}
       propertyPath: m_Name
-      value: SceneManager/Water
+      value: Water&Manager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3691,7 +3683,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -460, y: -4, z: -485}
-  m_LocalScale: {x: 0.014974202, y: 1, z: -0.006200392}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5074,3 +5066,4 @@ SceneRoots:
   - {fileID: 1243866887}
   - {fileID: 1062199216}
   - {fileID: 464100687}
+  - {fileID: 753141164}
