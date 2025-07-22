@@ -2,14 +2,7 @@ fileFormatVersion: 2
 guid: cd216112bd3c73d449296b5fed689173
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 2100000
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 318845
-  packageName: 3D_Game_Assets_City
-  packageVersion: 1.0.0
-  assetPath: Assets/3D_Game_Assets_City/Models/Pointer/Material/Pointer_Material.mat
-  uploadId: 752907

@@ -1,15 +1,8 @@
 fileFormatVersion: 2
-guid: 4844e65516dfe7140b05f441cc6d8e85
-timeCreated: 1484217493
-licenseType: Store
+guid: 0b44140b40d43b943bdf0ec2429bff68
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 191449
-  packageName: Simple Water Shader URP
-  packageVersion: 1.0.0
-  assetPath: Assets/IgniteCoders/Simple Water Shader/Info/Readme.asset
-  uploadId: 422776
