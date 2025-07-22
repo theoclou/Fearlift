@@ -14,7 +14,7 @@ public class CylinderStart : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         canvas.SetActive(true);
-        bpm = BLEHeartRateMonitor.Instance.heartRate; // Actuellement chiffre fixe
+        bpm = BLEHeartRateMonitor.Instance.heartRate;
         if (other.CompareTag("Player"))
         {
             StartCoroutine(HandleMeasurementSequence());
