@@ -5,7 +5,7 @@ public class WelcomeText : MonoBehaviour
 {
     public GameObject welcomeCanvas;
     public TextMeshProUGUI welcomeText;
-    public float displayTime = 5;
+    public float displayTime = 7;
 
     void Start()
     {
