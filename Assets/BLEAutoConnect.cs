@@ -1,9 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class BLEHeartRateMonitor : MonoBehaviour
 {
@@ -25,6 +29,9 @@ public class BLEHeartRateMonitor : MonoBehaviour
     public int heartRate;
 
     public static BLEHeartRateMonitor Instance;
+
+    public List<HeartRateSample> heartRateHistory = new List<HeartRateSample>();
+
     void Awake()
     {
         if (Instance == null)
@@ -124,6 +131,9 @@ public class BLEHeartRateMonitor : MonoBehaviour
                 heartRate = ParseHeartRate(res.buf);
                 if (heartRate > 0)
                     Debug.Log($"❤️ Heart Rate: {heartRate} bpm");
+                    string currentScene = SceneManager.GetActiveScene().name;
+
+                    heartRateHistory.Add(new HeartRateSample(Time.time, heartRate, currentScene));
             }
         }
 
@@ -166,6 +176,14 @@ public class BLEHeartRateMonitor : MonoBehaviour
         return isUINT16 ? (data[1] | (data[2] << 8)) : data[1];
     }
 
+    public void MarkSceneChange(string sceneName)
+    {
+        // Utilise un BPM spécial comme marqueur non physiologique (ex: -1)
+        string currentScene = SceneManager.GetActiveScene().name;
+        heartRateHistory.Add(new HeartRateSample(Time.time, -1, currentScene ));
+        Debug.Log($"📍 Scene changed to: {sceneName} at {Time.time}s");
+    }
+
     public void SelectDevice(GameObject selected)
     {
         deviceId = selected.name;
@@ -187,6 +205,7 @@ public class BLEHeartRateMonitor : MonoBehaviour
         Debug.Log("Service scanning started...");
 
         //Launch the menu
+        MarkSceneChange("Menu");
         SceneManager.LoadScene("Menu");
     }
 
@@ -196,8 +215,31 @@ public class BLEHeartRateMonitor : MonoBehaviour
             Destroy(child.gameObject);
     }
 
+
     void OnApplicationQuit()
     {
         BleApi.Quit();
+
+        string path = Path.Combine(Application.persistentDataPath, "HeartRateData.csv");
+        CsvExporter.ExportToCSV(heartRateHistory, path);
+        Debug.Log("Heart rate data exported to " + path);
+    }
+}
+
+
+public class CsvExporter
+{
+    public static void ExportToCSV(List<HeartRateSample> data, string filePath)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.AppendLine("Timestamp;BPM;Scene");
+
+        foreach (var sample in data)
+        {
+            string time = sample.timestamp.ToString(CultureInfo.InvariantCulture);
+            sb.AppendLine($"{time};{sample.bpm};{sample.sceneName}");
+        }
+
+        File.WriteAllText(filePath, sb.ToString());
     }
 }

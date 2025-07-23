@@ -48,6 +48,7 @@ public class CylinderStart : MonoBehaviour
 
         statusText.text = "Launching the scene...";
 
+        BLEHeartRateMonitor.Instance.MarkSceneChange("ClosedBalcony");
         SceneManager.LoadScene("ClosedBalcony");
     }
 }

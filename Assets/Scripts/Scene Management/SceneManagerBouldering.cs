@@ -36,6 +36,7 @@ public class SceneManagerBouldering : MonoBehaviour
         yield return new WaitForSeconds(2f); // Attendre 2 secondes
 
         LoadingText.SetActive(false); // Désactiver le texte de chargement
+        BLEHeartRateMonitor.Instance.MarkSceneChange(sceneToLoad); // Marquer le changement de scène
         SceneManager.LoadScene(sceneToLoad);
     }
 }

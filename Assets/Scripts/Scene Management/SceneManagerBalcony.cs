@@ -56,6 +56,7 @@ public class SceneManagerBalcony : MonoBehaviour
                     LoadingText.SetActive(true);
                     yield return new WaitForSeconds(2f); // Attendre un peu avant de charger la scène
                     LoadingText.SetActive(false);
+                    BLEHeartRateMonitor.Instance.MarkSceneChange(sceneToLoad);
                     SceneManager.LoadScene(sceneToLoad);
                     
                 }
