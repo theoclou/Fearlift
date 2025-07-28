@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Movement;
 
 public class SceneManagerBalcony : MonoBehaviour
 {
@@ -10,8 +11,13 @@ public class SceneManagerBalcony : MonoBehaviour
     public float requiredDuration = 30f; // durée à rester stable
     public string sceneToLoad;
     public GameObject LoadingText;
+    public GameObject LoadingPlane;
+    public GameObject LoadingPlane2; // Optionnel, si vous avez un deuxième plan de chargement
+    public GameObject LoadingPlane3;
 
     private Coroutine checkRoutine;
+
+    public Transform player; // Référence au joueur, si nécessaire
 
     private void Start()
     {
@@ -54,8 +60,20 @@ public class SceneManagerBalcony : MonoBehaviour
                 {
                     Debug.Log("✅ Value has remained stable for 30 seconds!");
                     LoadingText.SetActive(true);
+                    LoadingPlane.SetActive(true);
+                    LoadingPlane2.SetActive(true);
+                    LoadingPlane3.SetActive(true);
+
+                    //var locomotion = player.GetComponent<ContinuousMoveProvider>();
+
+                    //if (locomotion != null) locomotion.enabled = false; // Désactiver le mouvement avant de charger la scène
                     yield return new WaitForSeconds(2f); // Attendre un peu avant de charger la scène
+                    
+                    //if (locomotion != null) locomotion.enabled = true; // Réactiver le mouvement après le chargement
                     LoadingText.SetActive(false);
+                    LoadingPlane.SetActive(false);
+                    LoadingPlane2.SetActive(false);
+                    LoadingPlane3.SetActive(false);
                     BLEHeartRateMonitor.Instance.MarkSceneChange(sceneToLoad);
                     SceneManager.LoadScene(sceneToLoad);
                     

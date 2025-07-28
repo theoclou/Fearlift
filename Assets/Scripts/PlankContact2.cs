@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BridgeByYPosition : MonoBehaviour
+public class BridgeByYPosition2 : MonoBehaviour
 {
     public Transform player;             // Référence vers le joueur (XR Rig)
     public Transform targetToMove;       // Ce qu'on bouge (ex: collider invisible)
@@ -21,7 +21,7 @@ public class BridgeByYPosition : MonoBehaviour
 
     void Update()
     {
-        if (player.position.y <= yThreshold && player.position.z <= zThreshold)
+        if (player.position.y <= yThreshold && player.position.z >= zThreshold)
         {
             // Descendre
             targetToMove.position = Vector3.Lerp(targetToMove.position, loweredPos, Time.deltaTime * moveSpeed);

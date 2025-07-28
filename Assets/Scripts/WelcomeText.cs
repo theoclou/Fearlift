@@ -20,7 +20,7 @@ public class WelcomeText : MonoBehaviour
 
     void ChangeText()
     {
-        welcomeText.text = "We are going to take a few mesurements, please step in the circle in front of you";
+        welcomeText.text = "Please step in the circle in front of you for measurements";
         Invoke(nameof(HideCanvas), displayTime);
     }
 }
