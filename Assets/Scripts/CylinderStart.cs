@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class CylinderStart : MonoBehaviour
 {
     public TextMeshProUGUI statusText;
-    public float bpm;
+    private float bpm;
     public Material emissionMaterial; // Matériau d'émission à appliquer
     public GameObject canvas;
     [SerializeField] private int timeBeforeLaunch;
