@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using System.Text;
 using System;
+using Oculus.Interaction.DebugTree;
 public struct DataStruct
 {
     public float time;
@@ -19,12 +20,16 @@ public struct DataStruct
     public float rightPupilDiameter;
     public float leftOpenness;
     public float rightOpenness;
-    public bool myflag;
+    public bool looksAtVoid; 
 }
 public class DatabaseManager : MonoBehaviour
 {
+
+    private string _folderPath = "ExportedData/";   
+
     [SerializeField]
     private bool _isTaskStart = false;
+    [SerializeField] int blinkWindow = 30; // in seconds
     public bool isTaskStart
     {
         get { return _isTaskStart; }
@@ -49,6 +54,10 @@ public class DatabaseManager : MonoBehaviour
     private bool rightflag = true;
     private string FileDate;
     private string NowTime;
+    private int blinkPerMinute = 0;
+
+    private List<float> rightBlinkTimes = new List<float>();
+    private List<float> leftBlinkTimes = new List<float>();
     void Awake()
     {
         if (_instance == null)
@@ -80,6 +89,9 @@ public class DatabaseManager : MonoBehaviour
     }
     public void UpdateDataLog(DataStruct log)
     {
+        // Utiliser la culture "en-US" pour forcer le point comme séparateur décimal
+        var culture = System.Globalization.CultureInfo.InvariantCulture;
+
         if (flag)
         {
             flagnum = 1;
@@ -94,6 +106,7 @@ public class DatabaseManager : MonoBehaviour
             {
                 Rblink = Rblink + 1;
                 rightflag = false;
+                rightBlinkTimes.Add(log.time);
             }
         }
         else
@@ -106,21 +119,33 @@ public class DatabaseManager : MonoBehaviour
             {
                 Lblink = Lblink + 1;
                 leftflag = false;
+                leftBlinkTimes.Add(log.time);
             }
         }
         else
         {
             leftflag = true;
         }
-        _dataLog.AppendFormat("{0},{1},{2},{3},", log.time, log.HMDpos.x, log.HMDpos.y, log.HMDpos.z);
-        _dataLog.AppendFormat("{0},{1},{2},{3},", log.HMDrot.x, log.HMDrot.y, log.HMDrot.z, log.HMDrot.w);
-        _dataLog.AppendFormat("{0},{1},{2},", log.leftPosition.x, log.leftPosition.y, log.leftPosition.z);
-        _dataLog.AppendFormat("{0},{1},{2},", log.rightPosition.x, log.rightPosition.y, log.rightPosition.z);
-        _dataLog.AppendFormat("{0},{1},{2},", log.leftGazeOrigin.x, log.leftGazeOrigin.y, log.leftGazeOrigin.z);
-        _dataLog.AppendFormat("{0},{1},{2},", log.rightGazeOrigin.x, log.rightGazeOrigin.y, log.rightGazeOrigin.z);
-        _dataLog.AppendFormat("{0},{1},{2},", log.leftGazeDirection.x, log.leftGazeDirection.y, log.leftGazeDirection.z);
-        _dataLog.AppendFormat("{0},{1},{2},", log.rightGazeDirection.x, log.rightGazeDirection.y, log.rightGazeDirection.z);
-        _dataLog.AppendFormat("{0},{1},{2},{3},{4},{5},{6},{7}\n", log.leftPupilDiameter, log.rightPupilDiameter, log.leftOpenness, log.rightOpenness, flagnum, Rblink, Lblink, log.myflag);
+        // Nettoyage des blinks hors fenêtre glissante (20s)
+        float windowStart = log.time - blinkWindow;
+        rightBlinkTimes.RemoveAll(t => t < windowStart);
+        leftBlinkTimes.RemoveAll(t => t < windowStart);
+
+        // Calcul du blink rate glissant (par minute)
+        int rightCount = rightBlinkTimes.Count;
+        int leftCount = leftBlinkTimes.Count;
+        int minBlinkCount = Mathf.Min(rightCount, leftCount);
+        blinkPerMinute = (int)((minBlinkCount * 60f) / blinkWindow);
+
+        _dataLog.AppendFormat(culture, "{0},{1},{2},{3},", log.time, log.HMDpos.x, log.HMDpos.y, log.HMDpos.z);
+        _dataLog.AppendFormat(culture, "{0},{1},{2},{3},", log.HMDrot.x, log.HMDrot.y, log.HMDrot.z, log.HMDrot.w);
+        _dataLog.AppendFormat(culture, "{0},{1},{2},", log.leftPosition.x, log.leftPosition.y, log.leftPosition.z);
+        _dataLog.AppendFormat(culture, "{0},{1},{2},", log.rightPosition.x, log.rightPosition.y, log.rightPosition.z);
+        _dataLog.AppendFormat(culture, "{0},{1},{2},", log.leftGazeOrigin.x, log.leftGazeOrigin.y, log.leftGazeOrigin.z);
+        _dataLog.AppendFormat(culture, "{0},{1},{2},", log.rightGazeOrigin.x, log.rightGazeOrigin.y, log.rightGazeOrigin.z);
+        _dataLog.AppendFormat(culture, "{0},{1},{2},", log.leftGazeDirection.x, log.leftGazeDirection.y, log.leftGazeDirection.z);
+        _dataLog.AppendFormat(culture, "{0},{1},{2},", log.rightGazeDirection.x, log.rightGazeDirection.y, log.rightGazeDirection.z);
+        _dataLog.AppendFormat(culture, "{0},{1},{2},{3},{4},{5},{6},{7}\n", log.leftPupilDiameter, log.rightPupilDiameter, log.leftOpenness, log.rightOpenness, flagnum, Rblink, Lblink, blinkPerMinute);
     }
     public void StopDataLog()
     {
@@ -129,6 +154,11 @@ public class DatabaseManager : MonoBehaviour
     void ExportData()
     {
         string fileName = $"exportData_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
+        if (!Directory.Exists(_folderPath))
+        {
+            Directory.CreateDirectory(_folderPath);
+        }
+        fileName = Path.Combine(_folderPath, fileName);
         _exFile = new StreamWriter(fileName);
         {
         };
