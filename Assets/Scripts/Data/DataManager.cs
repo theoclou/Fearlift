@@ -165,6 +165,9 @@ public class DataManager : MonoBehaviour
                 // Ouverture des yeux
                 log.leftOpenness = eyeData.verbose_data.left.eye_openness;
                 log.rightOpenness = eyeData.verbose_data.right.eye_openness;
+
+                // LooksAtVoid
+                log.looksAtVoid = GazeRaycast.LooksAtVoid;
             }
             else
             {

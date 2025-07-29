@@ -26,7 +26,7 @@ public class GazeRaycast : MonoBehaviour
     private Vector3 smoothedGazeDirection = Vector3.forward;
     private Vector3 lastValidGazeDirection = Vector3.forward;
 
-    public bool LooksAtVoid { get; private set; } = false;
+    public static bool LooksAtVoid { get; private set; } = false;
 
     void Start()
     {

@@ -29,7 +29,7 @@ public class DatabaseManager : MonoBehaviour
 
     [SerializeField]
     private bool _isTaskStart = false;
-    [SerializeField] int blinkWindow = 30; // in seconds
+    [SerializeField] private int blinkWindow = 30; // in seconds
     public bool isTaskStart
     {
         get { return _isTaskStart; }
@@ -145,6 +145,7 @@ public class DatabaseManager : MonoBehaviour
         _dataLog.AppendFormat(culture, "{0},{1},{2},", log.rightGazeOrigin.x, log.rightGazeOrigin.y, log.rightGazeOrigin.z);
         _dataLog.AppendFormat(culture, "{0},{1},{2},", log.leftGazeDirection.x, log.leftGazeDirection.y, log.leftGazeDirection.z);
         _dataLog.AppendFormat(culture, "{0},{1},{2},", log.rightGazeDirection.x, log.rightGazeDirection.y, log.rightGazeDirection.z);
+        _dataLog.AppendFormat(culture, "{0},", log.looksAtVoid);
         _dataLog.AppendFormat(culture, "{0},{1},{2},{3},{4},{5},{6},{7}\n", log.leftPupilDiameter, log.rightPupilDiameter, log.leftOpenness, log.rightOpenness, flagnum, Rblink, Lblink, blinkPerMinute);
     }
     public void StopDataLog()
