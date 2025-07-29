@@ -2367,6 +2367,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5797147941415871274, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: gazeOffset.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797147941415871274, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: videLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797147941415871274, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: horizontalMultiplier
+      value: 1.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2863,6 +2875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isTaskStart: 0
+  blinkWindow: 30
 --- !u!4 &1483211224
 Transform:
   m_ObjectHideFlags: 0
