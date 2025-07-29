@@ -22,6 +22,7 @@ public struct DataStruct
     public float leftOpenness;
     public float rightOpenness;
     public bool looksAtVoid;
+    public int heartRate; // Ajout du BPM
 }
 
 public class DatabaseManager : MonoBehaviour
@@ -41,6 +42,10 @@ public class DatabaseManager : MonoBehaviour
     private StringBuilder _dataLog;
     private StreamWriter _exFile;
     private static DatabaseManager _instance = null;
+
+    // Variables pour le heart rate
+    private int _currentHeartRate = -1;
+    private List<HeartRateSample> _heartRateBuffer = new List<HeartRateSample>();
 
     public static DatabaseManager instance
     {
@@ -93,6 +98,26 @@ public class DatabaseManager : MonoBehaviour
         Debug.Log("DatabaseManager: Instance créée et conservée entre les scènes");
     }
 
+    // Méthode pour que BLEHeartRateMonitor puisse envoyer les données BPM
+    public void UpdateHeartRate(int bpm, string sceneName = "")
+    {
+        _currentHeartRate = bpm;
+
+        // Ajouter au buffer pour historique si nécessaire
+        string currentScene = string.IsNullOrEmpty(sceneName) ? SceneManager.GetActiveScene().name : sceneName;
+        _heartRateBuffer.Add(new HeartRateSample(Time.time, bpm, currentScene));
+
+        Debug.Log($"DatabaseManager: Heart rate updated to {bpm} bpm");
+    }
+
+    // Méthode pour marquer un changement de scène
+    public void MarkSceneChange(string sceneName)
+    {
+        // Utilise un BPM spécial comme marqueur non physiologique (ex: -1)
+        UpdateHeartRate(-1, sceneName);
+        Debug.Log($"DatabaseManager: Scene change marked - {sceneName} at {Time.time}s");
+    }
+
     public void StartDataLog()
     {
         if (isLoggingStarted)
@@ -113,7 +138,8 @@ public class DatabaseManager : MonoBehaviour
         _dataLog.AppendFormat("Left_Gaze_Direction_x,Left_Gaze_Direction_y,Left_Gaze_Direction_z,");
         _dataLog.AppendFormat("Right_Gaze_Direction_x,Right_Gaze_Direction_y,Right_Gaze_Direction_z,");
         _dataLog.AppendFormat("Looks_At_Void,");
-        _dataLog.AppendFormat("Left_Pupil_Diameter,Right_Pupil_Diameter,Left_Openness,Right_Openness,RBlinkCount,LBlinkCount,BlinkPerMinute\n");
+        _dataLog.AppendFormat("Left_Pupil_Diameter,Right_Pupil_Diameter,Left_Openness,Right_Openness,RBlinkCount,LBlinkCount,BlinkPerMinute,");
+        _dataLog.AppendFormat("HeartRate\n"); // Ajout de la colonne HeartRate
 
         isLoggingStarted = true;
         _isTaskStart = true;
@@ -124,6 +150,8 @@ public class DatabaseManager : MonoBehaviour
         rightBlinkTimes.Clear();
         leftBlinkTimes.Clear();
         blinkPerMinute = 0;
+        _heartRateBuffer.Clear(); // Reset du buffer BPM
+        _currentHeartRate = -1;
     }
 
     public void UpdateDataLog(DataStruct log)
@@ -188,6 +216,9 @@ public class DatabaseManager : MonoBehaviour
         // Récupération de la Scène
         string currentScene = SceneManager.GetActiveScene().name;
 
+        // Utiliser le heart rate actuel (ou celui passé dans la structure si vous préférez)
+        int heartRateToLog = log.heartRate != 0 ? log.heartRate : _currentHeartRate;
+
         _dataLog.AppendFormat(culture, "{0},{1},", log.time, currentScene);
         _dataLog.AppendFormat(culture, "{0},{1},{2},", log.HMDpos.x, log.HMDpos.y, log.HMDpos.z);
         _dataLog.AppendFormat(culture, "{0},{1},{2},{3},", log.HMDrot.x, log.HMDrot.y, log.HMDrot.z, log.HMDrot.w);
@@ -198,7 +229,8 @@ public class DatabaseManager : MonoBehaviour
         _dataLog.AppendFormat(culture, "{0},{1},{2},", log.leftGazeDirection.x, log.leftGazeDirection.y, log.leftGazeDirection.z);
         _dataLog.AppendFormat(culture, "{0},{1},{2},", log.rightGazeDirection.x, log.rightGazeDirection.y, log.rightGazeDirection.z);
         _dataLog.AppendFormat(culture, "{0},", log.looksAtVoid);
-        _dataLog.AppendFormat(culture, "{0},{1},{2},{3},{4},{5},{6}\n", log.leftPupilDiameter, log.rightPupilDiameter, log.leftOpenness, log.rightOpenness, Rblink, Lblink, blinkPerMinute);
+        _dataLog.AppendFormat(culture, "{0},{1},{2},{3},{4},{5},{6},", log.leftPupilDiameter, log.rightPupilDiameter, log.leftOpenness, log.rightOpenness, Rblink, Lblink, blinkPerMinute);
+        _dataLog.AppendFormat(culture, "{0}\n", heartRateToLog); // Ajout du heart rate
     }
 
     public void StopDataLog()
@@ -245,6 +277,12 @@ public class DatabaseManager : MonoBehaviour
         }
     }
 
+    // Méthode pour obtenir l'historique du heart rate si besoin
+    public List<HeartRateSample> GetHeartRateHistory()
+    {
+        return new List<HeartRateSample>(_heartRateBuffer);
+    }
+
     // Méthode pour nettoyer manuellement si nécessaire
     public void ResetLogging()
     {
@@ -256,6 +294,8 @@ public class DatabaseManager : MonoBehaviour
         rightBlinkTimes.Clear();
         leftBlinkTimes.Clear();
         blinkPerMinute = 0;
+        _heartRateBuffer.Clear();
+        _currentHeartRate = -1;
         Debug.Log("DatabaseManager: Logging réinitialisé");
     }
 
@@ -268,3 +308,5 @@ public class DatabaseManager : MonoBehaviour
         }
     }
 }
+
+// La classe HeartRateSample est définie dans un fichier séparé
