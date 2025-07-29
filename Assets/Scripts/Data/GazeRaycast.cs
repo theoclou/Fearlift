@@ -10,12 +10,12 @@ public class GazeRaycast : MonoBehaviour
     [SerializeField] float gazeRadius = 0.1f;
     [SerializeField] GameObject gazeMarkerPrefab;
 
-    [Header("Gaze Calibration Settings")]
-    [SerializeField] Vector3 gazeOffset = new Vector3(0.15f, 0.0f, 0.0f); // Décalage de calibration du regard
-    [SerializeField] float horizontalMultiplier = 1.0f; // Multiplier horizontal pour ajuster la sensibilité
-    [SerializeField] float verticalMultiplier = 1.0f;   // Multiplier vertical pour ajuster la sensibilité
-    [SerializeField] bool enableGazeSmoothing = true;   // Lissage du regard
-    [SerializeField] float smoothingFactor = 0.8f;      // Facteur de lissage (0-1)
+    [Header("Calibration (Auto-applied from Manager)")]
+    [SerializeField] Vector3 gazeOffset = Vector3.zero;
+    [SerializeField] float horizontalMultiplier = 1.0f;
+    [SerializeField] float verticalMultiplier = 1.0f;
+    [SerializeField] bool enableGazeSmoothing = true;
+    [SerializeField] float smoothingFactor = 0.8f;
 
     // Utiliser EyeData_v2 comme dans vos autres scripts
     private static EyeData_v2 eyeData = new EyeData_v2();
@@ -43,7 +43,30 @@ public class GazeRaycast : MonoBehaviour
             gazeMarkerInstance.SetActive(false);
         }
 
+        // Appliquer automatiquement la calibration sauvegardée
+        ApplyCalibrationFromManager();
+
         Debug.Log($"GazeRaycast initialized - Layer mask: {videLayer.value}");
+    }
+
+    private void ApplyCalibrationFromManager()
+    {
+        // Si le manager existe, récupérer les paramètres
+        if (GazeCalibrationManager.Instance != null)
+        {
+            GazeCalibrationManager.Instance.ApplyCalibrationTo(this);
+        }
+    }
+
+    public void SetCalibrationData(Vector3 offset, float hMult, float vMult, bool smoothing, float smoothFactor)
+    {
+        gazeOffset = offset;
+        horizontalMultiplier = hMult;
+        verticalMultiplier = vMult;
+        enableGazeSmoothing = smoothing;
+        smoothingFactor = smoothFactor;
+
+        Debug.Log($"Calibration applied: Offset={gazeOffset}, HMult={horizontalMultiplier}, VMult={verticalMultiplier}");
     }
 
     void Update()
@@ -87,11 +110,8 @@ public class GazeRaycast : MonoBehaviour
             return;
         }
 
-        // Méthode 1: Utiliser la fonction Focus de SRanipal (recommandée)
+        // Effectuer le raycast de regard
         PerformGazeRaycastWithSRanipal();
-
-        // Méthode 2: Raycast manuel (alternative si la méthode 1 ne marche pas)
-        // PerformManualGazeRaycast();
     }
 
     private void PerformGazeRaycastWithSRanipal()
@@ -125,17 +145,15 @@ public class GazeRaycast : MonoBehaviour
         // Garder la direction originale pour la détection
         Vector3 originalGazeDirection = gazeDirection;
 
-        // Appliquer d'abord l'offset de calibration AVANT la transformation (pour l'affichage)
+        // Appliquer l'offset de calibration pour l'affichage
         Vector3 correctedGazeDirection = gazeDirection;
         correctedGazeDirection.x += gazeOffset.x;
         correctedGazeDirection.y += gazeOffset.y;
         correctedGazeDirection.z += gazeOffset.z;
 
-        // Appliquer les multipliers pour corriger la sensibilité (pour l'affichage)
+        // Appliquer les multipliers pour l'affichage
         correctedGazeDirection.x *= horizontalMultiplier;
         correctedGazeDirection.y *= verticalMultiplier;
-
-        // Normaliser AVANT la transformation en coordonnées monde
         correctedGazeDirection = correctedGazeDirection.normalized;
 
         // Convertir en coordonnées monde
@@ -153,7 +171,7 @@ public class GazeRaycast : MonoBehaviour
             worldCorrectedDirection = correctedGazeDirection;
         }
 
-        // Appliquer le lissage si activé (sur la direction originale pour la détection)
+        // Appliquer le lissage sur la direction originale pour la détection
         Vector3 finalDetectionDirection = worldOriginalDirection;
         if (enableGazeSmoothing)
         {
@@ -169,9 +187,7 @@ public class GazeRaycast : MonoBehaviour
         Ray gazeRay = new Ray(worldGazeOrigin, finalDetectionDirection);
         RaycastHit hit;
 
-        bool looksBelow = finalDetectionDirection.y < 0.0f;
-
-        if ((Physics.Raycast(gazeRay, out hit, gazeRayLength, videLayer)) && looksBelow)
+        if (Physics.Raycast(gazeRay, out hit, gazeRayLength, videLayer))
         {
             LooksAtVoid = true;
 
@@ -194,74 +210,10 @@ public class GazeRaycast : MonoBehaviour
                 gazeMarkerInstance.SetActive(false);
         }
 
-        // Debug visuel : Afficher le rayon CORRIGÉ (pour l'affichage) mais détecter avec l'ORIGINAL
+        // Debug visuel : Afficher le rayon CORRIGÉ (pour l'affichage)
         Debug.DrawRay(worldGazeOrigin, worldCorrectedDirection * gazeRayLength, LooksAtVoid ? Color.green : Color.red);
         // Optionnel: afficher aussi le rayon de détection original en jaune
         Debug.DrawRay(worldGazeOrigin, finalDetectionDirection * gazeRayLength, Color.yellow, 0.1f);
-    }
-
-    private void PerformManualGazeRaycast()
-    {
-        // Alternative: raycast manuel basé sur les données brutes
-        Vector3 leftGaze = eyeData.verbose_data.left.gaze_direction_normalized;
-        Vector3 rightGaze = eyeData.verbose_data.right.gaze_direction_normalized;
-
-        // Vérifier la validité des données
-        bool leftValid = (eyeData.verbose_data.left.eye_data_validata_bit_mask & (int)SingleEyeDataValidity.SINGLE_EYE_DATA_GAZE_DIRECTION_VALIDITY) != 0;
-        bool rightValid = (eyeData.verbose_data.right.eye_data_validata_bit_mask & (int)SingleEyeDataValidity.SINGLE_EYE_DATA_GAZE_DIRECTION_VALIDITY) != 0;
-
-        Vector3 combinedGaze = Vector3.zero;
-        if (leftValid && rightValid)
-        {
-            combinedGaze = (leftGaze + rightGaze) * 0.5f;
-        }
-        else if (leftValid)
-        {
-            combinedGaze = leftGaze;
-        }
-        else if (rightValid)
-        {
-            combinedGaze = rightGaze;
-        }
-        else
-        {
-            LooksAtVoid = false;
-            if (gazeMarkerInstance != null)
-                gazeMarkerInstance.SetActive(false);
-            return;
-        }
-
-        // Origine du regard (caméra principale)
-        Vector3 gazeOrigin = mainCamera != null ? mainCamera.transform.position : transform.position;
-        Vector3 gazeDirection = mainCamera != null ? mainCamera.transform.TransformDirection(combinedGaze) : combinedGaze;
-
-        // Raycast
-        Ray gazeRay = new Ray(gazeOrigin, gazeDirection);
-        RaycastHit hit;
-
-        if (Physics.Raycast(gazeRay, out hit, gazeRayLength, videLayer))
-        {
-            LooksAtVoid = true;
-
-            if (gazeMarkerInstance != null)
-            {
-                gazeMarkerInstance.SetActive(true);
-                gazeMarkerInstance.transform.position = hit.point;
-            }
-
-            if (Time.frameCount % 120 == 0)
-            {
-                Debug.Log($"[ManualGaze] Hit Void layer! Object: {hit.collider.name}");
-            }
-        }
-        else
-        {
-            LooksAtVoid = false;
-            if (gazeMarkerInstance != null)
-                gazeMarkerInstance.SetActive(false);
-        }
-
-        Debug.DrawRay(gazeOrigin, gazeDirection * gazeRayLength, LooksAtVoid ? Color.blue : Color.yellow);
     }
 
     private void OnDestroy()
@@ -278,7 +230,7 @@ public class GazeRaycast : MonoBehaviour
         eyeData = eye_data;
     }
 
-    // Méthodes publiques pour accéder aux informations et calibration
+    // Méthodes publiques pour la calibration
     public Vector3 GetCurrentGazeDirection()
     {
         Vector3 gazeOrigin, gazeDirection;
@@ -297,29 +249,5 @@ public class GazeRaycast : MonoBehaviour
             return mainCamera != null ? mainCamera.transform.TransformPoint(gazeOrigin) : gazeOrigin;
         }
         return mainCamera != null ? mainCamera.transform.position : transform.position;
-    }
-
-    // Méthodes de calibration à appeler depuis l'Inspector ou d'autres scripts
-    public void CalibrateGazeOffset(Vector3 targetWorldPosition)
-    {
-        Vector3 currentGazeOrigin = GetCurrentGazeOrigin();
-        Vector3 currentGazeDirection = GetCurrentGazeDirection();
-
-        Vector3 expectedDirection = (targetWorldPosition - currentGazeOrigin).normalized;
-        Vector3 actualDirection = currentGazeDirection;
-
-        Vector3 error = expectedDirection - actualDirection;
-        gazeOffset += mainCamera.transform.InverseTransformDirection(error);
-
-        Debug.Log($"Gaze calibrated! New offset: {gazeOffset}");
-    }
-
-    [ContextMenu("Reset Gaze Calibration")]
-    public void ResetGazeCalibration()
-    {
-        gazeOffset = Vector3.zero;
-        horizontalMultiplier = 1.0f;
-        verticalMultiplier = 1.0f;
-        Debug.Log("Gaze calibration reset!");
     }
 }

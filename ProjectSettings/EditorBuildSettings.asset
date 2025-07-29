@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ClosedBalcony.unity
     guid: f398b080d76448044a43eee8e1d6494c
   - enabled: 1
+    path: Assets/Scenes/Bridge.unity
+    guid: 8524e76ded1d5ad4194adbc9a7643d40
+  - enabled: 1
     path: Assets/Scenes/Bouldering.unity
     guid: 2711509de1aa66e4693e29311f20f611
   - enabled: 1
