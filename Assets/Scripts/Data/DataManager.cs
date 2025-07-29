@@ -1,61 +1,3 @@
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-//using ViveSR.anipal.Eye;
-//using UnityEngine.XR;
-//using Valve.VR;
-//using System;
-//public class DataManager : MonoBehaviour
-//{
-//    private static EyeData_v2 _eyeDataV2 = new EyeData_v2();
-//    private static VerboseData _verboseData;
-//    DataStruct _log;
-//    [SerializeField]
-//    GameObject _mainCamera;
-//    [SerializeField] bool _isTestMode = false;
-//    private bool flagBrower = true;
-//    private bool delayFlag = true;
-//    private float ProcessingTime = 0;
-//    private int BrowerCount = 0;
-//    private float PreROpenness = 0;
-//    void Start()
-//    {
-//        DatabaseManager.instance.isTaskStart = true;
-//        DatabaseManager.instance.StartDataLog();
-//    }
-
-//    void Update()
-//    {
-//        if (!DatabaseManager.instance.isTaskStart) return;
-//        _log.time += Time.deltaTime;
-//        if (!_isTestMode)
-//        {
-
-//            SRanipal_Eye_API.GetEyeData_v2(ref _eyeDataV2);
-//            SRanipal_Eye_v2.GetVerboseData(out _verboseData, _eyeDataV2);
-//            _log.leftPosition = _eyeDataV2.verbose_data.left.pupil_position_in_sensor_area;
-//            _log.rightPosition = _eyeDataV2.verbose_data.right.pupil_position_in_sensor_area;
-//            _log.leftGazeOrigin = _eyeDataV2.verbose_data.left.gaze_origin_mm;
-//            _log.rightGazeOrigin = _eyeDataV2.verbose_data.right.gaze_origin_mm;
-//            _log.leftGazeDirection = _eyeDataV2.verbose_data.left.gaze_direction_normalized;
-//            _log.rightGazeDirection = _eyeDataV2.verbose_data.right.gaze_direction_normalized;
-//            _log.leftPupilDiameter = _eyeDataV2.verbose_data.left.pupil_diameter_mm;
-//            _log.rightPupilDiameter = _eyeDataV2.verbose_data.right.pupil_diameter_mm;
-//            _log.leftOpenness = _eyeDataV2.verbose_data.left.eye_openness;
-//            _log.rightOpenness = _eyeDataV2.verbose_data.right.eye_openness;
-//        }
-//        _log.HMDpos = _mainCamera.transform.position;
-//        _log.HMDrot = _mainCamera.transform.rotation;
-//        DatabaseManager.instance.UpdateDataLog(_log);
-//    }
-
-
-//    private void OnApplicationQuit()
-//    {
-//        DatabaseManager.instance.StopDataLog();
-//    }
-//}
-
 using UnityEngine;
 using ViveSR.anipal.Eye;
 using System.Runtime.InteropServices;
@@ -67,36 +9,63 @@ public class DataManager : MonoBehaviour
 
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private bool isTestMode = false;
+    [SerializeField] private bool startLoggingOnStart = true; // Nouveau paramètre
 
     private bool eye_callback_registered = false;
+    private float sessionStartTime = 0f;
 
     void Start()
     {
+        Debug.Log("DataManager: Démarrage du DataManager");
+
         // Vérifier si l'eye tracking est activé
-        if (!SRanipal_Eye_Framework.Instance.EnableEye)
+        if (!isTestMode && !SRanipal_Eye_Framework.Instance.EnableEye)
         {
+            Debug.LogWarning("DataManager: Eye tracking désactivé, passage en mode test");
+            isTestMode = true;
+        }
+
+        // S'assurer que le DatabaseManager existe
+        if (DatabaseManager.instance == null)
+        {
+            Debug.LogError("DataManager: DatabaseManager non trouvé !");
             enabled = false;
             return;
         }
 
-        // Initialiser la base de données
-        DatabaseManager.instance.isTaskStart = true;
-        DatabaseManager.instance.StartDataLog();
+        // Démarrer le logging si configuré pour le faire (seulement si pas déjà démarré)
+        if (startLoggingOnStart && !DatabaseManager.instance.isTaskStart)
+        {
+            Debug.Log("DataManager: Démarrage automatique du logging");
+            DatabaseManager.instance.StartDataLog();
+            sessionStartTime = Time.time;
+        }
+        else if (DatabaseManager.instance.isTaskStart)
+        {
+            Debug.Log("DataManager: Le logging était déjà démarré");
+            // Récupérer le temps de session depuis le DatabaseManager si possible
+            sessionStartTime = Time.time; // Approximation, idéalement on stockerait ça dans DatabaseManager
+        }
     }
 
     void Update()
     {
-        if (!DatabaseManager.instance.isTaskStart) return;
-
-        // Vérifier le statut du framework comme dans le sample
-        if (SRanipal_Eye_Framework.Status != SRanipal_Eye_Framework.FrameworkStatus.WORKING &&
-            SRanipal_Eye_Framework.Status != SRanipal_Eye_Framework.FrameworkStatus.NOT_SUPPORT)
+        // Vérifier que le DatabaseManager existe et que le logging est actif
+        if (DatabaseManager.instance == null || !DatabaseManager.instance.isTaskStart)
+        {
             return;
+        }
 
-        log.time += Time.deltaTime;
+        // Calculer le temps relatif à la session de logging
+        log.time = Time.time - sessionStartTime;
 
         if (!isTestMode)
         {
+            // Vérifier le statut du framework comme dans le sample
+            if (SRanipal_Eye_Framework.Status != SRanipal_Eye_Framework.FrameworkStatus.WORKING &&
+                SRanipal_Eye_Framework.Status != SRanipal_Eye_Framework.FrameworkStatus.NOT_SUPPORT)
+                return;
+
             // Gestion du callback comme dans le sample
             if (SRanipal_Eye_Framework.Instance.EnableEyeDataCallback == true && eye_callback_registered == false)
             {
@@ -120,6 +89,7 @@ public class DataManager : MonoBehaviour
 
             if (SRanipal_Eye_Framework.Status == SRanipal_Eye_Framework.FrameworkStatus.WORKING)
             {
+                // Debug occasionnel (toutes les 60 frames)
                 if (Time.frameCount % 60 == 0)
                 {
                     Debug.Log(
@@ -128,17 +98,19 @@ public class DataManager : MonoBehaviour
                     $"LeftGazeDirection={eyeData.verbose_data.left.gaze_direction_normalized}, " +
                     $"LeftPupilDiameter={eyeData.verbose_data.left.pupil_diameter_mm}, " +
                     $"LeftEyeOpenness={eyeData.verbose_data.left.eye_openness}, " +
-                    $"no_user={eyeData.no_user}, ");
+                    $"no_user={eyeData.no_user}");
                 }
+
                 // Vérifier d'abord la validité des données avant de les utiliser
                 bool leftDataValid = (eyeData.verbose_data.left.eye_data_validata_bit_mask & (int)SingleEyeDataValidity.SINGLE_EYE_DATA_GAZE_DIRECTION_VALIDITY) != 0;
                 bool rightDataValid = (eyeData.verbose_data.right.eye_data_validata_bit_mask & (int)SingleEyeDataValidity.SINGLE_EYE_DATA_GAZE_DIRECTION_VALIDITY) != 0;
 
-                isLeftEyeActive = eyeData.no_user && leftDataValid;
-                isRightEyeActive = eyeData.no_user && rightDataValid;
+                isLeftEyeActive = !eyeData.no_user && leftDataValid;
+                isRightEyeActive = !eyeData.no_user && rightDataValid;
             }
             else if (SRanipal_Eye_Framework.Status == SRanipal_Eye_Framework.FrameworkStatus.NOT_SUPPORT)
             {
+                // Mode fallback si eye tracking non supporté
                 isLeftEyeActive = true;
                 isRightEyeActive = true;
             }
@@ -166,8 +138,15 @@ public class DataManager : MonoBehaviour
                 log.leftOpenness = eyeData.verbose_data.left.eye_openness;
                 log.rightOpenness = eyeData.verbose_data.right.eye_openness;
 
-                // LooksAtVoid
-                log.looksAtVoid = GazeRaycast.LooksAtVoid;
+                // LooksAtVoid (vérifier que GazeRaycast existe)
+                try
+                {
+                    log.looksAtVoid = GazeRaycast.LooksAtVoid;
+                }
+                catch
+                {
+                    log.looksAtVoid = false; // Valeur par défaut si GazeRaycast n'existe pas
+                }
             }
             else
             {
@@ -182,7 +161,23 @@ public class DataManager : MonoBehaviour
                 log.rightPupilDiameter = 0f;
                 log.leftOpenness = 0f;
                 log.rightOpenness = 0f;
+                log.looksAtVoid = false;
             }
+        }
+        else
+        {
+            // Mode test - générer des données factices
+            log.leftPosition = Vector2.zero;
+            log.rightPosition = Vector2.zero;
+            log.leftGazeOrigin = Vector3.zero;
+            log.rightGazeOrigin = Vector3.zero;
+            log.leftGazeDirection = Vector3.forward;
+            log.rightGazeDirection = Vector3.forward;
+            log.leftPupilDiameter = 3.0f;
+            log.rightPupilDiameter = 3.0f;
+            log.leftOpenness = 1.0f;
+            log.rightOpenness = 1.0f;
+            log.looksAtVoid = false;
         }
 
         // Données HMD (toujours récupérées)
@@ -190,6 +185,16 @@ public class DataManager : MonoBehaviour
         {
             log.HMDpos = mainCamera.transform.position;
             log.HMDrot = mainCamera.transform.rotation;
+        }
+        else
+        {
+            // Fallback sur la caméra principale si mainCamera n'est pas assignée
+            Camera cam = Camera.main;
+            if (cam != null)
+            {
+                log.HMDpos = cam.transform.position;
+                log.HMDrot = cam.transform.rotation;
+            }
         }
 
         // Mettre à jour la base de données
@@ -204,7 +209,12 @@ public class DataManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         Release();
-        DatabaseManager.instance.StopDataLog();
+
+        // Arrêter le logging seulement si ce DataManager l'avait démarré
+        if (startLoggingOnStart && DatabaseManager.instance != null)
+        {
+            DatabaseManager.instance.StopDataLog();
+        }
     }
 
     private void Release()
@@ -222,6 +232,22 @@ public class DataManager : MonoBehaviour
     {
         eyeData = eye_data;
     }
+
+    // Méthodes publiques pour contrôler le logging depuis l'extérieur
+    public void StartLogging()
+    {
+        if (DatabaseManager.instance != null)
+        {
+            DatabaseManager.instance.StartDataLog();
+            sessionStartTime = Time.time;
+        }
+    }
+
+    public void StopLogging()
+    {
+        if (DatabaseManager.instance != null)
+        {
+            DatabaseManager.instance.StopDataLog();
+        }
+    }
 }
-
-

@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
 using System.Text;
-using System;
-using Oculus.Interaction.DebugTree;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public struct DataStruct
 {
     public float time;
@@ -20,32 +21,48 @@ public struct DataStruct
     public float rightPupilDiameter;
     public float leftOpenness;
     public float rightOpenness;
-    public bool looksAtVoid; 
+    public bool looksAtVoid;
 }
+
 public class DatabaseManager : MonoBehaviour
 {
-
-    private string _folderPath = "ExportedData/";   
+    private string _folderPath = "ExportedData";
 
     [SerializeField]
     private bool _isTaskStart = false;
     [SerializeField] private int blinkWindow = 30; // in seconds
+
     public bool isTaskStart
     {
         get { return _isTaskStart; }
         set { _isTaskStart = value; }
     }
+
     private StringBuilder _dataLog;
     private StreamWriter _exFile;
     private static DatabaseManager _instance = null;
+
     public static DatabaseManager instance
     {
         get
         {
-            if (_instance == null) _instance = new GameObject("DatabaseManager").AddComponent<DatabaseManager>();
+            // Si l'instance n'existe pas, chercher dans la scène d'abord
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<DatabaseManager>();
+
+                // Si toujours pas trouvé, créer une nouvelle instance
+                if (_instance == null)
+                {
+                    GameObject go = new GameObject("DatabaseManager");
+                    _instance = go.AddComponent<DatabaseManager>();
+                    DontDestroyOnLoad(go);
+                }
+            }
             return _instance;
         }
     }
+
     private bool flag = true;
     private int flagnum = 0;
     private int Rblink = 0;
@@ -55,29 +72,39 @@ public class DatabaseManager : MonoBehaviour
     private string FileDate;
     private string NowTime;
     private int blinkPerMinute = 0;
+    private bool isLoggingStarted = false;
 
     private List<float> rightBlinkTimes = new List<float>();
     private List<float> leftBlinkTimes = new List<float>();
+
     void Awake()
     {
-        if (_instance == null)
+        // Si une instance existe déjà et que ce n'est pas celle-ci, détruire ce GameObject
+        if (_instance != null && _instance != this)
         {
-            _instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
+            Debug.Log("DatabaseManager: Instance déjà existante, destruction de ce GameObject");
             Destroy(gameObject);
+            return;
         }
+
+        // Sinon, cette instance devient l'instance principale
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
+        Debug.Log("DatabaseManager: Instance créée et conservée entre les scènes");
     }
-    //void Update()
-    //{
-    //    // flag = artificialBlinkFlag.flag;
-    //}
+
     public void StartDataLog()
     {
+        if (isLoggingStarted)
+        {
+            Debug.Log("DatabaseManager: Le logging est déjà démarré");
+            return;
+        }
+
+        Debug.Log("DatabaseManager: Démarrage du logging des données");
         _dataLog = new StringBuilder();
-        _dataLog.AppendFormat("Time,HMD_Position_x,HMD_Position_y,HMD_Position_z,");
+        _dataLog.AppendFormat("Time,Scene,");
+        _dataLog.AppendFormat("HMD_Position_x,HMD_Position_y,HMD_Position_z,");
         _dataLog.AppendFormat("HMD_Rotation_x,HMD_Rotation_y,HMD_Rotation_z,HMD_Rotation_w,");
         _dataLog.AppendFormat("Left_Position_x,Left_Position_y,Left_Position_z,");
         _dataLog.AppendFormat("Right_Position_x,Right_Position_y,Right_Position_z,");
@@ -87,9 +114,26 @@ public class DatabaseManager : MonoBehaviour
         _dataLog.AppendFormat("Right_Gaze_Direction_x,Right_Gaze_Direction_y,Right_Gaze_Direction_z,");
         _dataLog.AppendFormat("Looks_At_Void,");
         _dataLog.AppendFormat("Left_Pupil_Diameter,Right_Pupil_Diameter,Left_Openness,Right_Openness,RBlinkCount,LBlinkCount,BlinkPerMinute\n");
+
+        isLoggingStarted = true;
+        _isTaskStart = true;
+
+        // Réinitialiser les compteurs pour une nouvelle session
+        Rblink = 0;
+        Lblink = 0;
+        rightBlinkTimes.Clear();
+        leftBlinkTimes.Clear();
+        blinkPerMinute = 0;
     }
+
     public void UpdateDataLog(DataStruct log)
     {
+        if (!isLoggingStarted || _dataLog == null)
+        {
+            Debug.LogWarning("DatabaseManager: Tentative de mise à jour des données sans avoir démarré le logging");
+            return;
+        }
+
         // Utiliser la culture "en-US" pour forcer le point comme séparateur décimal
         var culture = System.Globalization.CultureInfo.InvariantCulture;
 
@@ -101,6 +145,7 @@ public class DatabaseManager : MonoBehaviour
         {
             flagnum = 0;
         }
+
         if (log.rightOpenness <= 0.5)
         {
             if (rightflag == true)
@@ -114,6 +159,7 @@ public class DatabaseManager : MonoBehaviour
         {
             rightflag = true;
         }
+
         if (log.leftOpenness <= 0.5)
         {
             if (leftflag == true)
@@ -127,7 +173,8 @@ public class DatabaseManager : MonoBehaviour
         {
             leftflag = true;
         }
-        // Nettoyage des blinks hors fenêtre glissante (20s)
+
+        // Nettoyage des blinks hors fenêtre glissante (30s)
         float windowStart = log.time - blinkWindow;
         rightBlinkTimes.RemoveAll(t => t < windowStart);
         leftBlinkTimes.RemoveAll(t => t < windowStart);
@@ -138,7 +185,11 @@ public class DatabaseManager : MonoBehaviour
         int minBlinkCount = Mathf.Min(rightCount, leftCount);
         blinkPerMinute = (int)((minBlinkCount * 60f) / blinkWindow);
 
-        _dataLog.AppendFormat(culture, "{0},{1},{2},{3},", log.time, log.HMDpos.x, log.HMDpos.y, log.HMDpos.z);
+        // Récupération de la Scène
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        _dataLog.AppendFormat(culture, "{0},{1},", log.time, currentScene);
+        _dataLog.AppendFormat(culture, "{0},{1},{2},", log.HMDpos.x, log.HMDpos.y, log.HMDpos.z);
         _dataLog.AppendFormat(culture, "{0},{1},{2},{3},", log.HMDrot.x, log.HMDrot.y, log.HMDrot.z, log.HMDrot.w);
         _dataLog.AppendFormat(culture, "{0},{1},{2},", log.leftPosition.x, log.leftPosition.y, log.leftPosition.z);
         _dataLog.AppendFormat(culture, "{0},{1},{2},", log.rightPosition.x, log.rightPosition.y, log.rightPosition.z);
@@ -149,23 +200,71 @@ public class DatabaseManager : MonoBehaviour
         _dataLog.AppendFormat(culture, "{0},", log.looksAtVoid);
         _dataLog.AppendFormat(culture, "{0},{1},{2},{3},{4},{5},{6}\n", log.leftPupilDiameter, log.rightPupilDiameter, log.leftOpenness, log.rightOpenness, Rblink, Lblink, blinkPerMinute);
     }
+
     public void StopDataLog()
     {
+        if (!isLoggingStarted)
+        {
+            Debug.Log("DatabaseManager: Le logging n'était pas démarré");
+            return;
+        }
+
+        Debug.Log("DatabaseManager: Arrêt du logging et export des données");
         ExportData();
+        isLoggingStarted = false;
+        _isTaskStart = false;
     }
+
     void ExportData()
     {
+        if (_dataLog == null || _dataLog.Length == 0)
+        {
+            Debug.LogWarning("DatabaseManager: Aucune donnée à exporter");
+            return;
+        }
+
+        _folderPath = Path.Combine(Application.persistentDataPath, "ExportedData");
         string fileName = $"exportData_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
         if (!Directory.Exists(_folderPath))
         {
             Directory.CreateDirectory(_folderPath);
         }
         fileName = Path.Combine(_folderPath, fileName);
-        _exFile = new StreamWriter(fileName);
+
+        try
         {
-        };
-        _exFile.WriteLine(_dataLog);
-        _exFile.Flush();
-        _exFile.Close();
+            _exFile = new StreamWriter(fileName);
+            _exFile.WriteLine(_dataLog);
+            _exFile.Flush();
+            _exFile.Close();
+            Debug.Log($"DatabaseManager: Données exportées vers {fileName}");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"DatabaseManager: Erreur lors de l'export : {e.Message}");
+        }
+    }
+
+    // Méthode pour nettoyer manuellement si nécessaire
+    public void ResetLogging()
+    {
+        isLoggingStarted = false;
+        _isTaskStart = false;
+        if (_dataLog != null) _dataLog.Clear();
+        Rblink = 0;
+        Lblink = 0;
+        rightBlinkTimes.Clear();
+        leftBlinkTimes.Clear();
+        blinkPerMinute = 0;
+        Debug.Log("DatabaseManager: Logging réinitialisé");
+    }
+
+    void OnDestroy()
+    {
+        if (_instance == this)
+        {
+            Debug.Log("DatabaseManager: Instance principale détruite");
+            _instance = null;
+        }
     }
 }
