@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using ViveSR.anipal.Eye;
 using UnityEngine.XR;
-using Valve.VR;
 using System;
+
 public class DataManager : MonoBehaviour
 {
     private static EyeData_v2 _eyeDataV2 = new EyeData_v2();
