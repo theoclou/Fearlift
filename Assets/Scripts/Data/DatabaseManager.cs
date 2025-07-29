@@ -85,7 +85,8 @@ public class DatabaseManager : MonoBehaviour
         _dataLog.AppendFormat("Right_Gaze_Origin.x,Right_Gaze_Origin.y,Right_Gaze_Origin.z,");
         _dataLog.AppendFormat("Left_Gaze_Direction_x,Left_Gaze_Direction_y,Left_Gaze_Direction_z,");
         _dataLog.AppendFormat("Right_Gaze_Direction_x,Right_Gaze_Direction_y,Right_Gaze_Direction_z,");
-        _dataLog.AppendFormat("Left_Pupil_Diameter,Right_Pupil_Diameter,Left_Openness,Right_Openness,ArtificialBlink_Flag,RBlinkCount,LBlinkCount,BrowerFlag\n");
+        _dataLog.AppendFormat("Looks_At_Void,");
+        _dataLog.AppendFormat("Left_Pupil_Diameter,Right_Pupil_Diameter,Left_Openness,Right_Openness,RBlinkCount,LBlinkCount,BlinkPerMinute\n");
     }
     public void UpdateDataLog(DataStruct log)
     {
@@ -146,7 +147,7 @@ public class DatabaseManager : MonoBehaviour
         _dataLog.AppendFormat(culture, "{0},{1},{2},", log.leftGazeDirection.x, log.leftGazeDirection.y, log.leftGazeDirection.z);
         _dataLog.AppendFormat(culture, "{0},{1},{2},", log.rightGazeDirection.x, log.rightGazeDirection.y, log.rightGazeDirection.z);
         _dataLog.AppendFormat(culture, "{0},", log.looksAtVoid);
-        _dataLog.AppendFormat(culture, "{0},{1},{2},{3},{4},{5},{6},{7}\n", log.leftPupilDiameter, log.rightPupilDiameter, log.leftOpenness, log.rightOpenness, flagnum, Rblink, Lblink, blinkPerMinute);
+        _dataLog.AppendFormat(culture, "{0},{1},{2},{3},{4},{5},{6}\n", log.leftPupilDiameter, log.rightPupilDiameter, log.leftOpenness, log.rightOpenness, Rblink, Lblink, blinkPerMinute);
     }
     public void StopDataLog()
     {

@@ -10,8 +10,8 @@ public class GazeRaycast : MonoBehaviour
     [SerializeField] float gazeRadius = 0.1f;
     [SerializeField] GameObject gazeMarkerPrefab;
 
-    [Header("Gaze Calibration")]
-    [SerializeField] Vector3 gazeOffset = Vector3.zero; // Offset pour corriger le décalage
+    [Header("Gaze Calibration Settings")]
+    [SerializeField] Vector3 gazeOffset = new Vector3(0.15f, 0.0f, 0.0f); // Décalage de calibration du regard
     [SerializeField] float horizontalMultiplier = 1.0f; // Multiplier horizontal pour ajuster la sensibilité
     [SerializeField] float verticalMultiplier = 1.0f;   // Multiplier vertical pour ajuster la sensibilité
     [SerializeField] bool enableGazeSmoothing = true;   // Lissage du regard
@@ -169,7 +169,9 @@ public class GazeRaycast : MonoBehaviour
         Ray gazeRay = new Ray(worldGazeOrigin, finalDetectionDirection);
         RaycastHit hit;
 
-        if (Physics.Raycast(gazeRay, out hit, gazeRayLength, videLayer))
+        bool looksBelow = finalDetectionDirection.y < 0.0f;
+
+        if ((Physics.Raycast(gazeRay, out hit, gazeRayLength, videLayer)) && looksBelow)
         {
             LooksAtVoid = true;
 
