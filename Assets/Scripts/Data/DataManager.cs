@@ -209,6 +209,12 @@ public class DataManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         Release();
+
+        // Arrêter le logging seulement si ce DataManager l'avait démarré
+        if (startLoggingOnStart && DatabaseManager.instance != null)
+        {
+            DatabaseManager.instance.StopDataLog();
+        }
     }
 
     private void Release()
@@ -237,4 +243,11 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    public void StopLogging()
+    {
+        if (DatabaseManager.instance != null)
+        {
+            DatabaseManager.instance.StopDataLog();
+        }
+    }
 }

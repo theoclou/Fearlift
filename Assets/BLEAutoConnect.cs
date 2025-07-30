@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class BLEHeartRateMonitor : MonoBehaviour
 {
     string deviceId;
@@ -28,6 +29,8 @@ public class BLEHeartRateMonitor : MonoBehaviour
     public int heartRate;
 
     public static BLEHeartRateMonitor Instance;
+
+    public List<HeartRateSample> heartRateHistory = new List<HeartRateSample>();
 
     void Awake()
     {
@@ -51,6 +54,7 @@ public class BLEHeartRateMonitor : MonoBehaviour
 
     void Update()
     {
+
         BleApi.ScanStatus status;
 
         if (isScanning && !isDeviceFound)
@@ -126,15 +130,10 @@ public class BLEHeartRateMonitor : MonoBehaviour
             {
                 heartRate = ParseHeartRate(res.buf);
                 if (heartRate > 0)
-                {
                     Debug.Log($"❤️ Heart Rate: {heartRate} bpm");
+                    string currentScene = SceneManager.GetActiveScene().name;
 
-                    // Envoyer les données au DatabaseManager au lieu de gérer l'historique ici
-                    if (DatabaseManager.instance != null)
-                    {
-                        DatabaseManager.instance.UpdateHeartRate(heartRate);
-                    }
-                }
+                    heartRateHistory.Add(new HeartRateSample(Time.time, heartRate, currentScene));
             }
         }
 
@@ -179,11 +178,9 @@ public class BLEHeartRateMonitor : MonoBehaviour
 
     public void MarkSceneChange(string sceneName)
     {
-        // Déléguer au DatabaseManager
-        if (DatabaseManager.instance != null)
-        {
-            DatabaseManager.instance.MarkSceneChange(sceneName);
-        }
+        // Utilise un BPM spécial comme marqueur non physiologique (ex: -1)
+        string currentScene = SceneManager.GetActiveScene().name;
+        heartRateHistory.Add(new HeartRateSample(Time.time, -1, currentScene ));
         Debug.Log($"📍 Scene changed to: {sceneName} at {Time.time}s");
     }
 
@@ -218,10 +215,31 @@ public class BLEHeartRateMonitor : MonoBehaviour
             Destroy(child.gameObject);
     }
 
+
     void OnApplicationQuit()
     {
         BleApi.Quit();
-        // Plus besoin d'exporter ici, DatabaseManager s'en charge
-        Debug.Log("BLE Heart Rate Monitor shutting down");
+
+        string path = Path.Combine(Application.persistentDataPath, "HeartRateData.csv");
+        CsvExporter.ExportToCSV(heartRateHistory, path);
+        Debug.Log("Heart rate data exported to " + path);
+    }
+}
+
+
+public class CsvExporter
+{
+    public static void ExportToCSV(List<HeartRateSample> data, string filePath)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.AppendLine("Timestamp;BPM;Scene");
+
+        foreach (var sample in data)
+        {
+            string time = sample.timestamp.ToString(CultureInfo.InvariantCulture);
+            sb.AppendLine($"{time};{sample.bpm};{sample.sceneName}");
+        }
+
+        File.WriteAllText(filePath, sb.ToString());
     }
 }

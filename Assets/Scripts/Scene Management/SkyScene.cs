@@ -57,7 +57,7 @@ public class SkyScene : MonoBehaviour
         // Stop data log correctement
         if (DatabaseManager.instance != null)
         {
-            yield return StartCoroutine(DatabaseManager.instance.StopDataLogCoroutine());
+            DatabaseManager.instance.StopDataLog();
         }
 
         SceneManager.LoadScene("Menu");
