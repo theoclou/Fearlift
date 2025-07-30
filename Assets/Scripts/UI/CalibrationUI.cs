@@ -28,38 +28,93 @@ public class CalibrationUI : MonoBehaviour
         if (stopCalibrationButton != null)
             stopCalibrationButton.onClick.AddListener(StopCalibration);
 
+        // MODIFICATION : Attendre que le GazeCalibrationManager soit prêt
+        StartCoroutine(InitializeWithManager());
+
+        UpdateUI();
+    }
+
+    // NOUVELLE MÉTHODE : Initialisation avec délai pour le manager
+    private System.Collections.IEnumerator InitializeWithManager()
+    {
+        // Attendre que le GazeCalibrationManager soit disponible
+        while (GazeCalibrationManager.Instance == null)
+        {
+            yield return null;
+        }
+
         // S'abonner aux événements du manager
+        SubscribeToManagerEvents();
+
+        // Assigner le prefab au manager s'il n'en a pas
+        AssignPrefabToManager();
+
+        // S'assurer que les références sont à jour
+        GazeCalibrationManager.Instance.RefreshSceneReferences();
+    }
+
+    // NOUVELLE MÉTHODE : S'abonner aux événements
+    private void SubscribeToManagerEvents()
+    {
         if (GazeCalibrationManager.Instance != null)
         {
             GazeCalibrationManager.Instance.OnCalibrationProgress += UpdateProgress;
             GazeCalibrationManager.Instance.OnCalibrationComplete += OnCalibrationComplete;
+            GazeCalibrationManager.Instance.OnCalibrationStatusChange += UpdateStatusText;
         }
+    }
 
-        // Assigner le prefab au manager s'il n'en a pas
+    // NOUVELLE MÉTHODE : Se désabonner des événements
+    private void UnsubscribeFromManagerEvents()
+    {
+        if (GazeCalibrationManager.Instance != null)
+        {
+            GazeCalibrationManager.Instance.OnCalibrationProgress -= UpdateProgress;
+            GazeCalibrationManager.Instance.OnCalibrationComplete -= OnCalibrationComplete;
+            GazeCalibrationManager.Instance.OnCalibrationStatusChange -= UpdateStatusText;
+        }
+    }
+
+    // NOUVELLE MÉTHODE : Assigner le prefab au manager
+    private void AssignPrefabToManager()
+    {
         if (GazeCalibrationManager.Instance != null && calibrationPointPrefab != null)
         {
             GazeCalibrationManager.Instance.calibrationPointPrefab = calibrationPointPrefab;
+            Debug.Log($"Assigned calibration point prefab to manager: {calibrationPointPrefab.name}");
         }
+    }
 
-        UpdateUI();
+    private void OnEnable()
+    {
+        // Re-s'abonner aux événements si nécessaire
+        if (GazeCalibrationManager.Instance != null)
+        {
+            SubscribeToManagerEvents();
+            // Réassigner le prefab au cas où
+            AssignPrefabToManager();
+        }
     }
 
     private void OnDestroy()
     {
         // Se désabonner des événements
-        if (GazeCalibrationManager.Instance != null)
-        {
-            GazeCalibrationManager.Instance.OnCalibrationProgress -= UpdateProgress;
-            GazeCalibrationManager.Instance.OnCalibrationComplete -= OnCalibrationComplete;
-        }
+        UnsubscribeFromManagerEvents();
     }
 
     public void StartCalibration()
     {
         if (GazeCalibrationManager.Instance != null)
         {
+            // AJOUT : S'assurer que le prefab est assigné avant de commencer
+            AssignPrefabToManager();
+
             GazeCalibrationManager.Instance.StartCalibration();
             UpdateUI();
+        }
+        else
+        {
+            Debug.LogError("GazeCalibrationManager.Instance is null!");
         }
     }
 
@@ -91,9 +146,13 @@ public class CalibrationUI : MonoBehaviour
             progressSlider.maxValue = total;
             progressSlider.value = current;
         }
+    }
 
+    // NOUVELLE MÉTHODE : Mise à jour du texte de statut
+    private void UpdateStatusText(string status)
+    {
         if (statusText != null)
-            statusText.text = $"Look at calibration point {current}/{total}";
+            statusText.text = status;
     }
 
     private void OnCalibrationComplete()
@@ -170,5 +229,16 @@ public class CalibrationUI : MonoBehaviour
     {
         if (calibrationPanel != null)
             calibrationPanel.SetActive(false);
+    }
+
+    // NOUVELLE MÉTHODE : Forcer la réassignation du prefab
+    [ContextMenu("Reassign Prefab to Manager")]
+    public void ReassignPrefabToManager()
+    {
+        AssignPrefabToManager();
+        if (GazeCalibrationManager.Instance != null)
+        {
+            GazeCalibrationManager.Instance.RefreshSceneReferences();
+        }
     }
 }

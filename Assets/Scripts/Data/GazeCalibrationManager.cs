@@ -62,6 +62,94 @@ public class GazeCalibrationManager : MonoBehaviour
         // S'assurer d'appliquer les paramètres quand l'objet devient actif
         FindSceneComponents();
         FindAndApplyToGazeRaycast();
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    // NOUVELLE MÉTHODE : Appelée quand une nouvelle scène se charge
+    private void OnLevelWasLoaded(int level)
+    {
+        // Réinitialiser les références de scène
+        RefreshSceneReferences();
+    }
+
+    private void OnDisable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    // NOUVELLE MÉTHODE : Appelée quand une scène se charge
+    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    {
+        // Attendre une frame pour que tous les objets soient initialisés
+        StartCoroutine(RefreshSceneReferencesDelayed());
+    }
+
+    // NOUVELLE MÉTHODE : Rafraîchir les références avec délai
+    private IEnumerator RefreshSceneReferencesDelayed()
+    {
+        yield return null; // Attendre une frame
+        RefreshSceneReferences();
+    }
+
+    // NOUVELLE MÉTHODE : Rafraîchir toutes les références de scène
+    public void RefreshSceneReferences()
+    {
+        Debug.Log("Refreshing scene references for GazeCalibrationManager");
+
+        // Chercher les composants dans la nouvelle scène
+        FindSceneComponents();
+        FindAndApplyToGazeRaycast();
+
+        // Chercher et réassigner le calibrationPointPrefab depuis CalibrationUI
+        RefreshCalibrationPointPrefab();
+    }
+
+    // NOUVELLE MÉTHODE : Trouver le prefab depuis CalibrationUI
+    private void RefreshCalibrationPointPrefab()
+    {
+        CalibrationUI calibrationUI = FindObjectOfType<CalibrationUI>();
+        if (calibrationUI != null && calibrationUI.calibrationPointPrefab != null)
+        {
+            calibrationPointPrefab = calibrationUI.calibrationPointPrefab;
+            Debug.Log($"Calibration point prefab refreshed from CalibrationUI: {calibrationPointPrefab.name}");
+        }
+        else if (calibrationPointPrefab == null)
+        {
+            // Essayer de créer un prefab de base si aucun n'est trouvé
+            CreateDefaultCalibrationPoint();
+        }
+    }
+
+    // NOUVELLE MÉTHODE : Créer un point de calibration par défaut
+    private void CreateDefaultCalibrationPoint()
+    {
+        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        sphere.transform.localScale = Vector3.one * 0.1f;
+
+        // Ajouter un matériau rouge visible
+        Renderer renderer = sphere.GetComponent<Renderer>();
+        if (renderer != null)
+        {
+            Material mat = new Material(Shader.Find("Standard"));
+            mat.color = Color.red;
+            mat.SetFloat("_Metallic", 0.0f);
+            mat.SetFloat("_Glossiness", 0.5f);
+            renderer.material = mat;
+        }
+
+        // Désactiver le collider si présent
+        Collider collider = sphere.GetComponent<Collider>();
+        if (collider != null)
+        {
+            collider.enabled = false;
+        }
+
+        // En faire un prefab temporaire
+        calibrationPointPrefab = sphere;
+        sphere.SetActive(false); // Le désactiver jusqu'à utilisation
+        DontDestroyOnLoad(sphere); // Le garder entre les scènes
+
+        Debug.Log("Created default calibration point prefab");
     }
 
     private void FindSceneComponents()
@@ -106,12 +194,22 @@ public class GazeCalibrationManager : MonoBehaviour
     {
         if (isCalibrating) return;
 
+        // AJOUT : S'assurer que les références sont à jour avant de commencer
+        RefreshSceneReferences();
+
         calibrationCamera = targetCamera ?? Camera.main;
         if (calibrationCamera == null)
         {
             Debug.LogError("No camera found for calibration!");
             OnCalibrationStatusChange?.Invoke("Error: No camera found!");
             return;
+        }
+
+        // AJOUT : Vérifier que le prefab est disponible
+        if (calibrationPointPrefab == null)
+        {
+            Debug.LogWarning("No calibration point prefab found, creating default one");
+            CreateDefaultCalibrationPoint();
         }
 
         Debug.Log("Starting gaze calibration...");
@@ -190,7 +288,9 @@ public class GazeCalibrationManager : MonoBehaviour
             // Créer le point de calibration
             if (calibrationPointPrefab != null)
             {
+                // MODIFICATION : Utiliser Instantiate avec activation explicite
                 currentCalibrationObject = Instantiate(calibrationPointPrefab);
+                currentCalibrationObject.SetActive(true); // S'assurer qu'il est actif
                 currentCalibrationObject.transform.position = calibrationPositions[i];
 
                 // Si c'est sur un canvas, ajuster la rotation pour face à la caméra
@@ -199,6 +299,12 @@ public class GazeCalibrationManager : MonoBehaviour
                     Vector3 directionToCamera = calibrationCamera.transform.position - currentCalibrationObject.transform.position;
                     currentCalibrationObject.transform.rotation = Quaternion.LookRotation(-directionToCamera);
                 }
+
+                Debug.Log($"Created calibration point at position: {calibrationPositions[i]}");
+            }
+            else
+            {
+                Debug.LogError("Calibration point prefab is null!");
             }
 
             Debug.Log($"Look at calibration point {i + 1}/{calibrationPointsCount}: {pointName}");
@@ -348,6 +454,12 @@ public class GazeCalibrationManager : MonoBehaviour
     public void StartQuickCalibration()
     {
         StartCalibration();
+    }
+
+    [ContextMenu("Refresh Scene References")]
+    public void RefreshSceneReferencesManual()
+    {
+        RefreshSceneReferences();
     }
 
     public void StopCalibration()

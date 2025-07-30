@@ -233,26 +233,26 @@ public class DatabaseManager : MonoBehaviour
         _dataLog.AppendFormat(culture, "{0}\n", heartRateToLog); // Ajout du heart rate
     }
 
-    public void StopDataLog()
+    public IEnumerator StopDataLogCoroutine()
     {
         if (!isLoggingStarted)
         {
             Debug.Log("DatabaseManager: Le logging n'était pas démarré");
-            return;
+            yield break;
         }
 
         Debug.Log("DatabaseManager: Arrêt du logging et export des données");
-        ExportData();
+        yield return ExportDataCoroutine();
         isLoggingStarted = false;
         _isTaskStart = false;
     }
 
-    void ExportData()
+    private IEnumerator ExportDataCoroutine()
     {
         if (_dataLog == null || _dataLog.Length == 0)
         {
             Debug.LogWarning("DatabaseManager: Aucune donnée à exporter");
-            return;
+            yield break;
         }
 
         _folderPath = Path.Combine(Application.persistentDataPath, "ExportedData");
@@ -263,19 +263,47 @@ public class DatabaseManager : MonoBehaviour
         }
         fileName = Path.Combine(_folderPath, fileName);
 
-        try
+        bool success = false;
+
+        yield return new WaitUntil(() =>
         {
-            _exFile = new StreamWriter(fileName);
-            _exFile.WriteLine(_dataLog);
-            _exFile.Flush();
-            _exFile.Close();
-            Debug.Log($"DatabaseManager: Données exportées vers {fileName}");
-        }
-        catch (System.Exception e)
+            try
+            {
+                _exFile = new StreamWriter(fileName);
+                _exFile.WriteLine(_dataLog);
+                _exFile.Flush();
+                _exFile.Close();
+                Debug.Log($"DatabaseManager: Données exportées vers {fileName}");
+                success = true;
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"DatabaseManager: Erreur lors de l'export : {e.Message}");
+            }
+
+            return true; // Toujours continuer après tentative
+        });
+
+        if (!success)
         {
-            Debug.LogError($"DatabaseManager: Erreur lors de l'export : {e.Message}");
+            Debug.LogWarning("DatabaseManager: Export échoué ou partiel.");
         }
     }
+
+    // Remplacement de la méthode fautive par une version synchrone conforme à Unity
+    private void OnApplicationQuit()
+    {
+        // On ne peut pas utiliser yield ou StartCoroutine ici, donc on force l'export synchrone
+        if (isLoggingStarted)
+        {
+            // Appel synchrone de l'export (attention : pas de yield !)
+            var export = ExportDataCoroutine();
+            while (export.MoveNext()) { }
+            isLoggingStarted = false;
+            _isTaskStart = false;
+        }
+    }
+
 
     // Méthode pour obtenir l'historique du heart rate si besoin
     public List<HeartRateSample> GetHeartRateHistory()

@@ -53,7 +53,15 @@ public class SkyScene : MonoBehaviour
         yield return null;
 
         BLEHeartRateMonitor.Instance.MarkSceneChange("Menu");
+
+        // Stop data log correctement
+        if (DatabaseManager.instance != null)
+        {
+            yield return StartCoroutine(DatabaseManager.instance.StopDataLogCoroutine());
+        }
+
         SceneManager.LoadScene("Menu");
+
         #if UNITY_EDITOR
                 EditorApplication.isPlaying = false;
         #else
