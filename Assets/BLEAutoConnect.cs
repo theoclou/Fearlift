@@ -22,6 +22,8 @@ public class BLEHeartRateMonitor : MonoBehaviour
     bool isSubscribed = false;
     string lastError;
 
+    private string currentScene = "Unknown";
+
     public GameObject deviceScanResultProto;
     Transform scanResultRoot;
     Dictionary<string, Dictionary<string, string>> devices = new Dictionary<string, Dictionary<string, string>>();
@@ -93,7 +95,7 @@ public class BLEHeartRateMonitor : MonoBehaviour
                 else if (status == BleApi.ScanStatus.FINISHED)
                 {
                     isScanning = false;
-                    Debug.Log("Device scanning finished.");
+                    //Debug.Log("Device scanning finished.");
                 }
             } while (status == BleApi.ScanStatus.AVAILABLE);
         }
@@ -106,7 +108,7 @@ public class BLEHeartRateMonitor : MonoBehaviour
                 {
                     isServiceFound = true;
                     BleApi.ScanCharacteristics(deviceId, serviceId);
-                    Debug.Log("Service found. Scanning characteristics...");
+                    //Debug.Log("Service found. Scanning characteristics...");
                 }
             }
         }
@@ -119,7 +121,7 @@ public class BLEHeartRateMonitor : MonoBehaviour
                 {
                     isCharacteristicFound = true;
                     Subscribe();
-                    Debug.Log("Characteristic found and subscribed.");
+                    //Debug.Log("Characteristic found and subscribed.");
                 }
             }
         }
@@ -130,8 +132,8 @@ public class BLEHeartRateMonitor : MonoBehaviour
             {
                 heartRate = ParseHeartRate(res.buf);
                 if (heartRate > 0)
-                    Debug.Log($"❤️ Heart Rate: {heartRate} bpm");
-                    string currentScene = SceneManager.GetActiveScene().name;
+                    //Debug.Log($"❤️ Heart Rate: {heartRate} bpm");
+                    currentScene = SceneManager.GetActiveScene().name;
 
                     heartRateHistory.Add(new HeartRateSample(Time.time, heartRate, currentScene));
             }
@@ -141,7 +143,7 @@ public class BLEHeartRateMonitor : MonoBehaviour
         BleApi.GetError(out err);
         if (lastError != err.msg && err.msg != "")
         {
-            Debug.LogError(err.msg);
+            //Debug.LogError(err.msg);
             lastError = err.msg;
         }
     }
@@ -158,14 +160,14 @@ public class BLEHeartRateMonitor : MonoBehaviour
         isSubscribed = false;
 
         BleApi.StartDeviceScan();
-        Debug.Log("BLE scan started.");
+        //Debug.Log("BLE scan started.");
     }
 
     void Subscribe()
     {
         BleApi.SubscribeCharacteristic(deviceId, serviceId, characteristicId, false);
         isSubscribed = true;
-        Debug.Log("Subscribed to Heart Rate Measurement.");
+        //Debug.Log("Subscribed to Heart Rate Measurement.");
     }
 
     int ParseHeartRate(byte[] data)
@@ -181,7 +183,7 @@ public class BLEHeartRateMonitor : MonoBehaviour
         // Utilise un BPM spécial comme marqueur non physiologique (ex: -1)
         string currentScene = SceneManager.GetActiveScene().name;
         heartRateHistory.Add(new HeartRateSample(Time.time, -1, currentScene ));
-        Debug.Log($"📍 Scene changed to: {sceneName} at {Time.time}s");
+        //Debug.Log($"📍 Scene changed to: {sceneName} at {Time.time}s");
     }
 
     public void SelectDevice(GameObject selected)
@@ -190,7 +192,7 @@ public class BLEHeartRateMonitor : MonoBehaviour
         isDeviceFound = true;
         isScanning = false;
 
-        Debug.Log($"Selected device: {devices[deviceId]["name"]} [{deviceId}]");
+        //Debug.Log($"Selected device: {devices[deviceId]["name"]} [{deviceId}]");
 
         // UI上で選択状態を示す
         for (int i = 0; i < scanResultRoot.childCount; i++)
@@ -202,7 +204,7 @@ public class BLEHeartRateMonitor : MonoBehaviour
 
         BleApi.StopDeviceScan();
         BleApi.ScanServices(deviceId);
-        Debug.Log("Service scanning started...");
+        //Debug.Log("Service scanning started...");
 
         //Launch the menu
         MarkSceneChange("Menu");
@@ -222,7 +224,7 @@ public class BLEHeartRateMonitor : MonoBehaviour
 
         string path = Path.Combine(Application.persistentDataPath, "HeartRateData.csv");
         CsvExporter.ExportToCSV(heartRateHistory, path);
-        Debug.Log("Heart rate data exported to " + path);
+        //Debug.Log("Heart rate data exported to " + path);
     }
 }
 
