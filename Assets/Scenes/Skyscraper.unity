@@ -88918,7 +88918,6 @@ GameObject:
   - component: {fileID: 907942604}
   - component: {fileID: 907942603}
   - component: {fileID: 907942602}
-  - component: {fileID: 907942606}
   - component: {fileID: 907942605}
   m_Layer: 0
   m_Name: Particle System
@@ -93839,14 +93838,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!81 &907942606
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 907942601}
-  m_Enabled: 1
 --- !u!1 &908478440 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2114082935289818206, guid: 3c1eaf8bcf1439a43b6ebc70231210db, type: 3}
@@ -126714,7 +126705,6 @@ GameObject:
   - component: {fileID: 1135524643}
   - component: {fileID: 1135524642}
   - component: {fileID: 1135524641}
-  - component: {fileID: 1135524645}
   - component: {fileID: 1135524644}
   m_Layer: 0
   m_Name: Particle System (2)
@@ -131635,14 +131625,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!81 &1135524645
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135524640}
-  m_Enabled: 1
 --- !u!1 &1135718147
 GameObject:
   m_ObjectHideFlags: 0
@@ -217424,7 +217406,6 @@ GameObject:
   - component: {fileID: 1976340200}
   - component: {fileID: 1976340199}
   - component: {fileID: 1976340198}
-  - component: {fileID: 1976340202}
   - component: {fileID: 1976340201}
   m_Layer: 0
   m_Name: Particle System (1)
@@ -222345,14 +222326,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!81 &1976340202
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1976340197}
-  m_Enabled: 1
 --- !u!1 &1976938523
 GameObject:
   m_ObjectHideFlags: 0
