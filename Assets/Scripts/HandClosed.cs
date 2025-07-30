@@ -20,11 +20,11 @@ public class HandClosed : MonoBehaviour
         if (targetMeshFilter != null)
         {
             originalMesh = targetMeshFilter.sharedMesh;
-            Debug.Log($"✅ Mesh original sauvegardé: {originalMesh?.name}");
+            //Debug.Log($"✅ Mesh original sauvegardé: {originalMesh?.name}");
         }
         else
         {
-            Debug.LogError("❌ TargetMeshFilter est null !");
+            //Debug.LogError("❌ TargetMeshFilter est null !");
         }
 
         // Configuration de l'Input Action Reference
@@ -34,11 +34,11 @@ public class HandClosed : MonoBehaviour
             gripButtonAction.action.performed += OnButtonPressed;
             gripButtonAction.action.canceled += OnButtonReleased;
 
-            Debug.Log($"✅ InputActionReference '{gripButtonAction.action.name}' activée.");
+            //Debug.Log($"✅ InputActionReference '{gripButtonAction.action.name}' activée.");
         }
         else
         {
-            Debug.LogError("❌ GripButtonAction est null ! Assurez-vous de l'assigner dans l'inspecteur.");
+            //Debug.LogError("❌ GripButtonAction est null ! Assurez-vous de l'assigner dans l'inspecteur.");
         }
     }
 
@@ -56,7 +56,7 @@ public class HandClosed : MonoBehaviour
     {
         if (!isSwapped && targetMeshFilter != null && newMesh != null)
         {
-            Debug.Log("🟢 Bouton pressé → Mesh remplacé par newMesh");
+            //Debug.Log("🟢 Bouton pressé → Mesh remplacé par newMesh");
             targetMeshFilter.sharedMesh = newMesh;
             isSwapped = true;
         }
@@ -66,7 +66,7 @@ public class HandClosed : MonoBehaviour
     {
         if (isSwapped && targetMeshFilter != null && originalMesh != null)
         {
-            Debug.Log("⚪️ Bouton relâché → Mesh restauré");
+            //Debug.Log("⚪️ Bouton relâché → Mesh restauré");
             targetMeshFilter.sharedMesh = originalMesh;
             isSwapped = false;
         }
@@ -82,7 +82,7 @@ public class HandClosed : MonoBehaviour
         bool pressed = gripButtonAction.action.IsPressed();
         if (pressed && Time.frameCount % 30 == 0) // Log toutes les 30 frames pour éviter le spam
         {
-            Debug.Log($"🔍 Bouton actuellement pressé: {pressed}");
+            //Debug.Log($"🔍 Bouton actuellement pressé: {pressed}");
         }
     }
 }
